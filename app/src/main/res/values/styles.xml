@@ -1,0 +1,100 @@
+<resources>
+<!-- Base application theme. -->
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="windowActionBar">false</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowContentTransitions">true</item>
+    <item name="fontFamily">@font/poppins_regular</item>
+</style>
+
+
+<style name="TextStyleNormal" parent="Theme.AppCompat.Light">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:fontFamily">@font/poppins_regular</item>
+    <item name="android:textSize">@dimen/_10ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+</style>
+<style name="TextStyleSemiBold" parent="Theme.AppCompat.Light">
+    <item name="android:fontFamily">@font/poppins_semibold</item>
+    <item name="android:textSize">@dimen/_10ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+</style>
+
+<style name="TextStyleBoldExtraLarge" parent="Theme.AppCompat.Light">
+    <item name="android:fontFamily">@font/poppins_bold</item>
+    <item name="android:textSize">@dimen/_20ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+</style>
+<style name="TextStyleLarge" parent="Theme.AppCompat.Light">
+    <item name="android:fontFamily">@font/poppins_bold</item>
+    <item name="android:textSize">@dimen/_16ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+</style>
+<style name="TextStyleBold" parent="Theme.AppCompat.Light">
+    <item name="android:fontFamily">@font/poppins_bold</item>
+    <item name="android:textSize">@dimen/_10ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+</style>
+
+<style name="RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+    <item name="colorControlNormal">@color/textGray</item>
+    <item name="colorControlActivated">@color/colorPrimary</item>
+    <item name="colorAccent">@color/colorPrimary</item>
+    <item name="android:textColor">@color/colorPrimary</item>
+</style>
+<style name="RatingBarLarge" parent="Widget.AppCompat.RatingBar">
+    <item name="colorControlNormal">@color/colorAccent</item>
+    <item name="colorControlActivated">@color/colorPrimary</item>
+    <item name="colorAccent">@color/colorPrimary</item>
+    <item name="android:textColor">@color/colorPrimary</item>
+</style>
+<style name="RatingBarCat" parent="Widget.AppCompat.RatingBar.Small">
+    <item name="colorControlNormal">@color/textGray</item>
+    <item name="colorControlActivated">@color/colorYellow</item>
+    <item name="colorAccent">@color/colorYellow</item>
+    <item name="android:textColor">@color/colorYellow</item>
+</style>
+
+<style name="TextStyleNormalTabs" parent="Theme.AppCompat.Light">
+    <item name="android:fontFamily">@font/poppins_bold</item>
+    <item name="android:textSize">@dimen/_11ssp</item>
+    <item name="android:textColor">@color/colorLightBlack</item>
+    <item name="android:textAllCaps">true</item>
+
+</style>
+
+
+<style name="AppTheme.FullScreenDialog" parent="Theme.MaterialComponents.Light.Dialog">
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:windowBackground">@android:color/white</item>
+    <item name="actionMenuTextColor">@color/colorAccent</item>
+
+</style>
+
+<style name="DatePickerSpinner" parent="Theme.AppCompat.Light.Dialog">
+    <item name="windowActionBar">false</item>
+    <item name="colorAccent">@color/textGray</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+</style>
+
+<style name="DialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorPrimary</item>
+    <item name="colorPrimary">@color/colorPrimary</item>
+</style>
+
+<style name="DeliveryTypeTheme" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+    <item name="colorAccent">@color/colorPrimary</item>
+</style>
+
+
+</resources>

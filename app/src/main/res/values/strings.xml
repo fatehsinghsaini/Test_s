@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="default_notification_channel_id">71717</string>
+    <string name="default_notification_channel_name">bringIt</string>
+    <string name="error_network_connection">You are not connected with an active internet connection.</string>
+    <string name="no">No</string>
+    <string name="no_saved_card">No Card Added</string>
+    <string name="yes">Yes</string>
+
+    <!--validation-->
+    <string name="enter_email">Please enter email address.</string>
+    <string name="valid_email">Please enter valid email address.</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="enter_old_password">Please enter old password</string>
+    <string name="enter_your_name">Please enter your name</string>
+    <string name="enter_phone_number">Please enter mobile number</string>
+    <string name="enter_confirm_password">Please enter confirm password</string>
+    <string name="enter_card_holder_name">Please enter card holder name</string>
+    <string name="enter_card_details">Please enter card details</string>
+    <string name="enter_card_number">Please enter valid card number</string>
+    <string name="password_confirm_password_not_same"><![CDATA[Password & Confirm Password not same]]></string>
+    <string name="invalid_password">Password must contain at least one alphabet and numeric character.</string>
+    <string name="minimum_charecter">Please Enter Minimum 6 Charter.</string>
+    <string name="enter_valid_phone_number">Phone number should be min 7 and max 15 characters</string>
+    <string name="password_length_validation">Password should be min 6 characters</string>
+    <string name="name_validation">Name should be min 3 and max 30 characters.</string>
+    <string name="email_contect_no_required">Email/Contact No. required</string>
+    <string name="terms_of_use">Terms of use</string>
+    <string name="please_accept_terms_conditon">Please accept terms and condition</string>
+    <string name="and"><![CDATA[&]]></string>
+
+    <string name="privacy_policy"><![CDATA[Privacy & Policy]]></string>
+    <string name="sign_up">Sign up</string>
+    <string name="enter_last_name">Enter last name</string>
+
+    <string name="welcome_back">Welcome to bring it</string>
+    <string name="lets_get_started">Let\'s get started</string>
+    <string name="mobile_email">Email Address/Phone Number</string>
+    <string name="txt_password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or_signin_with">Sign in with</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_to_get_started">Sign up to get started</string>
+    <string name="name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="enter_referral_code">Enter referral Code</string>
+    <string name="agree_to_our">I\'ve read and accept</string>
+    <string name="use_my_location">Use my Location</string>
+    <string name="add">Add</string>
+    <string name="forgot_password_subtext">Please enter the email to reset your password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="here">here</string>
+    <string name="or_signup_with">Or Sign up with</string>
+
+</resources>

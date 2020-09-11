@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/fbLayout"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/circle_share"
+            android:gravity="center"
+            android:layout_margin="@dimen/_6sdp"
+
+            >
+
+            <ImageView
+                style="@style/TextStyleNormal"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@mipmap/ic_fb_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/googleLayout"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/circle_share_gray"
+            android:layout_margin="@dimen/_6sdp"
+            android:gravity="center"
+            >
+
+
+            <ImageView
+                style="@style/TextStyleNormal"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@mipmap/ic_fb_icon"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>
