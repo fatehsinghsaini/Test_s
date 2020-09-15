@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sessionManager"
+            type="com.os.busservice.utility.SessionManager" />
+
+        <variable
+            name="baseUrl"
+            type="String" />
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                app:baseUrl="@{baseUrl}"
+                app:sessionManager="@{sessionManager}" />
+
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottomHomeLL"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginTop="-2dp"
+                android:layout_marginBottom="2dp" />
+
+            <LinearLayout
+                android:id="@+id/bottomHomeLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    style="@style/TextStyleBold"
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/textWhite"
+                    app:itemIconTint="@drawable/ic_home_selection"
+                    app:itemTextColor="@drawable/ic_home_selection"
+                    app:menu="@menu/bottom_navigation_menu"
+                    app:labelVisibilityMode="labeled"
+
+                    />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            android:layout_gravity="start"
+            android:background="@color/textWhite"
+            android:visibility="gone"
+
+            />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

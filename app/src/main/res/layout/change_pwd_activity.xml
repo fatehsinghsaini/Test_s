@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.os.busservice.ui.viewModel.LoginViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/textWhite"
+            android:orientation="vertical"
+            >
+
+            <include layout="@layout/common_toolbar"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/TextStyleBoldExtraLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/change_password"
+                android:layout_marginStart="@dimen/_10sdp"
+                />
+
+            <TextView
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/forgot_password_subtext"
+                android:visibility="gone"
+                android:textSize="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextStyleNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/old_password"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:passwordToggleEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={mViewModel.MOldPassword}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextStyleNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/new_password"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:passwordToggleEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={mViewModel.password}"
+                        android:imeOptions="actionDone"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextStyleNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/confirm_new_password"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:passwordToggleEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@={mViewModel.confirmPwd}"
+                        android:imeOptions="actionDone"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/bt_login"
+                style="@style/TextStyleBold"
+                android:layout_width="@dimen/buttonSize"
+                android:layout_height="@dimen/buttonSize"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:padding="@dimen/_10sdp"
+                android:background="@drawable/circle_primary"
+                android:contentDescription="@string/submit"
+                android:src="@drawable/ic_back_arrow"
+                android:rotation="180"
+                android:textColor="@color/textWhite"
+                android:layout_marginEnd="@dimen/_10sdp"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

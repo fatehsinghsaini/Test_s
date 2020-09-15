@@ -87,6 +87,8 @@ dependencies {
 
     //country flag with country code
     implementation 'com.github.joielechong:countrycodepicker:2.4.1'
+    //message dialog
+    implementation 'com.github.pepperonas:materialdialog:0.3.4'
 
 
 }
