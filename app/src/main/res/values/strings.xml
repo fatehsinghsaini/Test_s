@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">Test</string>
+    <string name="app_name">Rajway</string>
+
+    <string-array name="image_selection">
+        <item>@string/capture_from_camera</item>
+        <item>@string/pick_gallery</item>
+    </string-array>
+
     <string name="default_notification_channel_id">71717</string>
     <string name="default_notification_channel_name">bringIt</string>
     <string name="error_network_connection">You are not connected with an active internet connection.</string>
@@ -95,10 +101,18 @@
     <string name="capture_from_camera">Capture Image</string>
     <string name="pick_gallery">Pick From Gallery</string>
     <string name="cancel">Cancel</string>
+    <string name="next_step">Next Step</string>
 
-    <string-array name="image_selection">
-        <item>@string/capture_from_camera</item>
-        <item>@string/pick_gallery</item>
-    </string-array>
+    <string name="verify_tour_mobile">Verify Your Mobile!</string>
+    <string name="enter_otp">Please enter activation code which you receive from mobile</string>
+    <string name="resend_code">Resend OTP</string>
+    <string name="invalid_otp">Please enter valid OTP.</string>
+    <string name="sec">Sec</string>
+    <string name="_dash">- - - - - -</string>
+    <string name="verification">Verification</string>
+    <string name="dont_receive_otp">"Didn't receive the OTP"</string>
+    <string name="bus_ticket">Bus Ticket</string>
+    <string name="enter_source">Enter Source Name</string>
+
 
 </resources>

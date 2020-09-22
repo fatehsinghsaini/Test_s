@@ -8,17 +8,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.os.busservice.R
-import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.ActivityRegisterBinding
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.LoginViewModel
 import com.os.busservice.utility.AppDelegate
-import com.os.busservice.utility.ProgressDialog
 import com.os.busservice.utility.Tags
-import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.activity_register.*
-
 import kotlinx.android.synthetic.main.fb_google_layout.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
     var binding: ActivityRegisterBinding? = null
@@ -38,6 +35,10 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
 
     override fun initializeObject() {
         mActivity = this
+
+        toolbarName.text = getString(R.string.sign_up)
+
+
         if (intent.hasExtra(Tags.DATA)) {
             mViewModel?.pwdShowingFlag!!.value = false
             userItems = intent.getParcelableExtra(Tags.DATA)
@@ -74,6 +75,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
     }
 
     override fun setListeners() {
+        back.setOnClickListener(this)
         bt_signup.setOnClickListener(this)
         loginInTxt.setOnClickListener(this)
         fbLayout.setOnClickListener(this)
@@ -93,6 +95,9 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
             R.id.bt_signup -> {
                 mViewModel!!.countryCode.value = ccp.selectedCountryCode
                 mViewModel!!.mSendOtp(Tags.REGISTER)
+
+                startActivity(Intent(this, OtpVerifyActivity::class.java))
+                finish()
             }
             R.id.fbLayout -> faceBookLogin(Tags.REGISTER)
           /*  R.id.googleLayout -> googlePlusLogin(Tags.REGISTER)*/
@@ -104,6 +109,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                 getString(R.string.terms_of_use),
                 Tags.TERMS_AND_CONDITION
             )
+            R.id.back -> finish()
         }
     }
 

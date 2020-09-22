@@ -13,52 +13,205 @@
 
     </data>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:background="@color/colorPrimaryLight"
+        android:orientation="vertical"
         >
 
-        <LinearLayout
+        <include layout="@layout/main_toolbar_layout"/>
+
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layout_back"
-            android:orientation="vertical"
-            android:padding="@dimen/_20sdp">
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
 
-
-            <TextView
-                style="@style/TextStyleBoldExtraLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/create_account"
-                android:textColor="@color/colorPrimary"
-                />
-
-            <TextView
-                style="@style/TextStyleNormal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:text="@string/sign_up_to_get_started"
-                />
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/_5sdp"
-                >
+                android:background="@drawable/layout_back"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+
+                <TextView
+                    style="@style/TextStyleBoldExtraLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/create_account"
+                    android:textColor="@color/colorPrimary"
+                    />
+
+                <TextView
+                    style="@style/TextStyleNormal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/sign_up_to_get_started"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:hint="@string/name"
+                        android:layout_weight=".5"
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back_round_edittxt"
+                            android:inputType="textCapSentences"
+                            android:padding="@dimen/_10sdp"
+                            android:imeOptions="actionNext"
+                            android:text="@={mLoginViewModel.firstName}"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:hint="@string/last_name"
+                        android:layout_weight=".5"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextStyleNormal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back_round_edittxt"
+                            android:inputType="textCapSentences"
+                            android:padding="@dimen/_10sdp"
+                            android:imeOptions="actionNext"
+                            android:text="@={mLoginViewModel.lastName}"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
-                    android:hint="@string/name"
-                    android:layout_weight=".5"
+                    android:hint="@string/email_address"
+                    android:layout_marginTop="@dimen/_5sdp"
                     >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_10sdp"
+                        android:imeOptions="actionNext"
+                        android:text="@={mLoginViewModel.emial}"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/back_round_edittxt"
+                    android:layout_marginTop="@dimen/_10sdp"
+
+                    >
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|start"
+                        app:ccp_hideNameCode="true"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        app:ccp_defaultNameCode="IE"
+                        app:ccp_clickable="false"
+                        />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:id="@+id/mobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="@string/mobile_no"
+                        android:inputType="numberDecimal"
+                        android:maxLength="15"
+                        android:text="@={mLoginViewModel.mobileNo}"
+                        android:imeOptions="actionNext"
+                        android:padding="@dimen/_10sdp" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/password"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:passwordToggleEnabled="true"
+                    android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/_10sdp"
+                        android:imeOptions="actionNext"
+                        android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
+                        android:text="@={mLoginViewModel.password}"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/confirm_password"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:passwordToggleEnabled="true"
+                    android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextStyleNormal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/back_round_edittxt"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/_10sdp"
+                        android:imeOptions="actionDone"
+                        android:text="@={mLoginViewModel.confirmPwd}"
+                        android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:hint="@string/enter_referral_code"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    >
+
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/TextStyleNormal"
                         android:layout_width="match_parent"
@@ -67,296 +220,152 @@
                         android:inputType="textCapSentences"
                         android:padding="@dimen/_10sdp"
                         android:imeOptions="actionNext"
-                        android:text="@={mLoginViewModel.firstName}"
+                        android:text="@={mLoginViewModel.referral_by}"
+
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_50sdp"
-                    android:hint="@string/last_name"
-                    android:layout_weight=".5"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_10sdp"
+                    android:gravity="center_vertical"
                     >
-                    <com.google.android.material.textfield.TextInputEditText
-                        style="@style/TextStyleNormal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/back_round_edittxt"
-                        android:inputType="textCapSentences"
-                        android:padding="@dimen/_10sdp"
-                        android:imeOptions="actionNext"
-                        android:text="@={mLoginViewModel.lastName}"
+
+                    <CheckBox
+                        android:id="@+id/termsConditionCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="@={mLoginViewModel.termsConditionFlag}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/ihaveReadtxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/agree_to_our"
+                        android:gravity="center"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintStart_toEndOf="@+id/termsConditionCheck"
 
-            </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:hint="@string/email_address"
-                android:layout_marginTop="@dimen/_5sdp"
-                >
+                        />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/TextStyleNormal"
+                    <TextView
+                        android:id="@+id/privacyPolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        android:text="@string/privacy_policy"
+                        android:gravity="center"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintStart_toEndOf="@+id/ihaveReadtxt"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/and"
+                        app:layout_constraintStart_toEndOf="@+id/privacyPolicy"
+                        />
+                    <TextView
+                        android:id="@+id/termsCondition"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_10sdp"
+                        android:text="@string/terms_of_use"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toBottomOf="@+id/ihaveReadtxt"
+                        app:layout_constraintStart_toStartOf="@+id/ihaveReadtxt"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <Button
+                    android:id="@+id/bt_signup"
+                    style="@style/TextStyleLarge"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/back_round_edittxt"
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_10sdp"
-                    android:imeOptions="actionNext"
-                    android:text="@={mLoginViewModel.emial}"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:background="@drawable/back_round_edittxt"
-                android:layout_marginTop="@dimen/_10sdp"
-
-                >
-
-                <com.rilixtech.widget.countrycodepicker.CountryCodePicker
-                    android:id="@+id/ccp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center|start"
-                    app:ccp_hideNameCode="true"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    app:ccp_defaultNameCode="IE"
-                    app:ccp_clickable="false"
-                    />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/TextStyleNormal"
-                    android:id="@+id/mobileNo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="@string/mobile_no"
-                    android:inputType="numberDecimal"
-                    android:maxLength="15"
-                    android:text="@={mLoginViewModel.mobileNo}"
-                    android:imeOptions="actionNext"
-                    android:padding="@dimen/_10sdp" />
-
-
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:hint="@string/password"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:passwordToggleEnabled="true"
-                android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/TextStyleNormal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/back_round_edittxt"
-                    android:inputType="textPassword"
-                    android:padding="@dimen/_10sdp"
-                    android:imeOptions="actionNext"
-                    android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
-                    android:text="@={mLoginViewModel.password}"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:hint="@string/confirm_password"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:passwordToggleEnabled="true"
-                android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
-
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/TextStyleNormal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/back_round_edittxt"
-                    android:inputType="textPassword"
-                    android:padding="@dimen/_10sdp"
-                    android:imeOptions="actionDone"
-                    android:text="@={mLoginViewModel.confirmPwd}"
-                    android:visibility="@{showPassword ? View.VISIBLE :View.GONE}"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:hint="@string/enter_referral_code"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:visibility="gone"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/TextStyleNormal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/back_round_edittxt"
-                    android:inputType="textCapSentences"
-                    android:padding="@dimen/_10sdp"
-                    android:imeOptions="actionNext"
-                    android:text="@={mLoginViewModel.referral_by}"
-
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:gravity="center_vertical"
-                >
-
-                <CheckBox
-                    android:id="@+id/termsConditionCheck"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@={mLoginViewModel.termsConditionFlag}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:text="@string/next_step"
+                    android:background="@color/bt_colorYellow"
+                    android:textSize="@dimen/_12sdp"
                     />
 
-                <TextView
-                    android:id="@+id/ihaveReadtxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/agree_to_our"
-                    android:gravity="center"
-                    android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorBlack"
-                    app:layout_constraintStart_toEndOf="@+id/termsConditionCheck"
 
-
-                    />
-
-                <TextView
-                    android:id="@+id/privacyPolicy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingStart="@dimen/_4sdp"
-                    android:paddingEnd="@dimen/_2sdp"
-                    android:text="@string/privacy_policy"
-                    android:gravity="center"
-                    android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimaryDark"
-                    app:layout_constraintStart_toEndOf="@+id/ihaveReadtxt"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingStart="@dimen/_2sdp"
-                    android:paddingEnd="@dimen/_2sdp"
-                    android:textSize="@dimen/_10sdp"
-                    android:gravity="center"
-                    android:textColor="@color/colorBlack"
-                    android:text="@string/and"
-                    app:layout_constraintStart_toEndOf="@+id/privacyPolicy"
-                    />
-                <TextView
-                    android:id="@+id/termsCondition"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:textSize="@dimen/_10sdp"
-                    android:text="@string/terms_of_use"
-                    android:textColor="@color/colorPrimaryDark"
-                    app:layout_constraintTop_toBottomOf="@+id/ihaveReadtxt"
-                    app:layout_constraintStart_toStartOf="@+id/ihaveReadtxt"
-                    />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-            <ImageView
-                android:id="@+id/bt_signup"
-                style="@style/TextStyleBold"
-                android:layout_width="@dimen/buttonSize"
-                android:layout_height="@dimen/buttonSize"
-                android:layout_gravity="end"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:padding="@dimen/_10sdp"
-                android:background="@drawable/circle_primary"
-                android:contentDescription="@string/submit"
-                android:src="@drawable/ic_back_arrow"
-                android:rotation="180"
-                android:textColor="@color/textWhite" />
-
-
-            <TextView
-                style="@style/TextStyleNormal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/or_signup_with" />
-
-
-            <include layout="@layout/fb_google_layout"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:gravity="center"
-                android:orientation="horizontal">
 
                 <TextView
                     style="@style/TextStyleNormal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/already_have_account"
-                    />
+                    android:text="@string/or_signup_with" />
 
-                <TextView
-                    android:id="@+id/loginInTxt"
-                    style="@style/TextStyleBold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="@string/sign_in"
-                    android:textColor="@color/colorPrimary" />
 
-                <TextView
-                    style="@style/TextStyleNormal"
-                    android:layout_width="wrap_content"
+                <include layout="@layout/fb_google_layout"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:gravity="center"
-                    android:text="@string/here"
-                    />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextStyleNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/already_have_account"
+                        />
+
+                    <TextView
+                        android:id="@+id/loginInTxt"
+                        style="@style/TextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/sign_in"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        style="@style/TextStyleNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/here"
+                        />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
+        </ScrollView>
+    </LinearLayout>
 
-        </LinearLayout>
 
-    </ScrollView>
 
 </layout>

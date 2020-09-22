@@ -39,6 +39,7 @@
                 android:src="@drawable/ic_menu"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/_4sdp"
+                android:visibility="gone"
                 />
 
             <ImageView
@@ -63,7 +64,8 @@
             android:layout_gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:textSize="@dimen/_15sdp"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -71,47 +73,6 @@
             android:visibility="visible"
             />
 
-        <LinearLayout
-            android:id="@+id/addressLL"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/lltoolbar"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"
-            >
-
-            <TextView
-                style="@style/TextStyleNormal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/app_name"
-                android:textColor="@color/textWhite" />
-
-            <TextView
-                android:id="@+id/mAddress"
-                style="@style/TextStyleNormal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
-                android:gravity="center"
-                android:lines="1"
-                android:paddingStart="@dimen/_5sdp"
-                android:paddingEnd="@dimen/_5sdp"
-                android:text="@{sessionManager.mAddress}"
-                android:textColor="@color/textWhite"
-
-                />
-
-
-        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

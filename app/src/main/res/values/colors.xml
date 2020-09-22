@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#bd0835</color>
+    <color name="colorPrimaryDark">#bd0835</color>
 
     <color name="colorPrimaryLight">#f2fcfe</color>
     <color name="colorAccent">#BDB8B8</color>
@@ -16,6 +16,7 @@
     <color name="colorRed">#E53935</color>
     <color name="colorGreen">#3a579b</color>
     <color name="colorYellow">#f8b91c</color>
+    <color name="bt_colorYellow">#fbd85a</color>
     <color name="colorLightGreen">#1fa005</color>
 
 </resources>

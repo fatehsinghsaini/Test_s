@@ -15,8 +15,10 @@ import com.facebook.internal.CallbackManagerImpl
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -91,7 +93,7 @@ abstract class BaseBindingActivity : AppCompatActivity(){
 
     override fun onBackPressed() {
         super.onBackPressed()
-        Log.e("onBackPressed","call")
+        Log.e("onBackPressed", "call")
     }
 
 
@@ -127,21 +129,22 @@ abstract class BaseBindingActivity : AppCompatActivity(){
                     ) { _, response ->
                         if (response != null) {
                             socialModel = SocialModel()
-                            socialModel = FbDetails().getFacebookDetail(response.jsonObject.toString())
+                            socialModel =
+                                FbDetails().getFacebookDetail(response.jsonObject.toString())
                             AppDelegate.LogT("Facebook details==" + socialModel + "")
                             ProgressDialog.hideProgressDialog()
                             /*if (login == Tags.LOGIN)
                             {*/
-                                mLoginViewModel?.firstName?.value =socialModel?.first_name
-                                mLoginViewModel?.lastName?.value =socialModel?.last_name
-                                mLoginViewModel?.emial?.value =socialModel?.email_address
-                                mLoginViewModel?.socialLoginApi(
-                                    sessionManager?.mFCMToken,
-                                    socialModel?.socialId,
-                                    "",socialModel
-                                )
-                          //  }
-                           /* else {
+                            mLoginViewModel?.firstName?.value = socialModel?.first_name
+                            mLoginViewModel?.lastName?.value = socialModel?.last_name
+                            mLoginViewModel?.emial?.value = socialModel?.email_address
+                            mLoginViewModel?.socialLoginApi(
+                                sessionManager?.mFCMToken,
+                                socialModel?.socialId,
+                                "", socialModel
+                            )
+                            //  }
+                            /* else {
                                 mLoginViewModel?.emial?.value = socialModel?.email_address
                                 mLoginViewModel?.firstName?.value ="${socialModel?.first_name} ${socialModel?.last_name}"
                             }*/
@@ -185,19 +188,24 @@ abstract class BaseBindingActivity : AppCompatActivity(){
     }
 
     var mSocialType: String? = ""
-   /* fun googlePlusLogin(login: String?) {
+    fun googlePlusLogin(login: String?) {
         mSocialType = login
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+/*        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
+            .build()*/
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
             .build()
+
         if (mGoogleSignInClient == null)
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         mAuth = FirebaseAuth.getInstance()
         val signInIntent = mGoogleSignInClient!!.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }*/
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

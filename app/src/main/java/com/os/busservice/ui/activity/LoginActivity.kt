@@ -27,6 +27,7 @@ import com.os.busservice.utility.Tags
 import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fb_google_layout.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -61,9 +62,12 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
             handleLoginApi(it)
         })*/
 
+        toolbarName.text = getString(R.string.sign_in)
+
     }
 
     override fun setListeners() {
+        back.setOnClickListener(this)
         signUpTxt.setOnClickListener(this)
         forgotPwdTxt.setOnClickListener(this)
         bt_login.setOnClickListener(this)
@@ -133,7 +137,8 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
                 mViewModel!!.loginApi(sessionManager!!.mFCMToken)
 
             R.id.fbLayout -> faceBookLogin(Tags.LOGIN)
-          /*  R.id.googleLayout -> googlePlusLogin(Tags.LOGIN)*/
+            R.id.googleLayout -> googlePlusLogin(Tags.LOGIN)
+            R.id.back ->finish()
         }
 
     }

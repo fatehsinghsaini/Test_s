@@ -52,14 +52,14 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
             when (intent.getStringExtra(Tags.DATA)) {
                 Tags.ORDERS -> {
                     toolbarName.text =getString(R.string.app_name)
-                    addressLL.visibility=View.GONE
+
                     bottom_navigation.selectedItemId = R.id.navigation_order
                     changeFragment(HomeFragment(), false)
                 }
             }
 
         } else{
-            addressLL.visibility=View.VISIBLE
+
             toolbarName.visibility  =View.GONE
             bottom_navigation.selectedItemId = R.id.navigation_home
             changeFragment(HomeFragment(), false)
@@ -68,252 +68,20 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
 
     override fun setListeners() {
         bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
-        //bind with navigation view
-        mNavViewHeader = navigationView.getHeaderView(0)
-        navigationView.bringToFront()
-//        val navigationBinding = NavigationMenuBinding.bind(mNavViewHeader!!)
-        //navigationBinding.logout.setOnClickListener(this)
-        //navigationBinding.aboutUs.setOnClickListener(this)
-       // navigationBinding.contactUs.setOnClickListener(this)
-      //  navigationBinding.help.setOnClickListener(this)
-      //  navigationBinding.faq.setOnClickListener(this)
-       // navigationBinding.notificationList.setOnClickListener(this)
-
-        /* R.id.mAddress -> startActivity(Intent(this, ChangeCurrentLocation::class.java))
-            R.id.about_us -> mCallStaticPage(getString(R.string.about_us),ABOUT_US)
-            R.id.contactUs -> mCallStaticPage(getString(R.string.contact_us), CONTACT_US)
-            R.id.faq -> mCallStaticPage(getString(R.string.faq),FAQ)*/
-
-/*        navigationBinding.home.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            //startActivity(Intent(this, DashBoardActivity::class.java))
-
-        })*/
-
-       /* navigationBinding.notificationList.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-//            startActivity(Intent(this, NotificationActivity::class.java))
-
-        })*/
-
-/*
-        navigationBinding.faq.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-//            mCallStaticPage(getString(R.string.faq),FAQ)
-
-        })
-
-        navigationBinding.contactUs.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-//            mCallStaticPage(getString(R.string.contact_us), CONTACT_US)
-
-        })
-
-        navigationBinding.aboutUs.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-//            mCallStaticPage(getString(R.string.about_us),ABOUT_US)
-
-        })
-
-        navigationBinding.logout.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            AppDelegate.showAlert(
-                mActivity!!,
-                getString(R.string.logout),
-                getString(R.string.want_to_logout),
-                this
-            )
-
-        })
-
-        navigationBinding.help.setOnClickListener(View.OnClickListener {
-
-            drawerLayout.closeDrawer(GravityCompat.START)
-
-            navigationBinding.help.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            navigationBinding.help.setTextColor(resources.getColor(R.color.textWhite))
-
-            navigationBinding.home.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.home.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.aboutUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.aboutUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.contactUs.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.contactUs.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.faq.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.faq.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.logout.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.logout.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-            navigationBinding.notificationList.setBackgroundColor(resources.getColor(R.color.textWhite))
-            navigationBinding.notificationList.setTextColor(resources.getColor(R.color.colorLightBlack))
-
-//            mCallStaticPage(getString(R.string.help), HELP)
-
-
-        })*/
-
         toolbarMenu.setOnClickListener(this)
-        mAddress.setOnClickListener(this)
-
-      /*  navigationBinding.name.text = sessionManager?.fullName
-        navigationBinding.session =sessionManager
-        navigationBinding.profileLayout.setOnClickListener(this)*/
-
     }
 
     private var navigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
         object : BottomNavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
-                addressLL.visibility=View.VISIBLE
+
                 toolbarName.visibility = View.GONE
                 supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 
                 when (item.itemId) {
                     R.id.navigation_home -> {
                         toolbarName.text =getString(R.string.home)
-                        addressLL.visibility=View.VISIBLE
+
                         toolbarName.visibility = View.GONE
                         changeFragment(HomeFragment(),false)
                         return true
@@ -321,7 +89,7 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
                     R.id.navigation_order -> {
 
                         toolbarName.text =getString(R.string.booking)
-                        addressLL.visibility=View.GONE
+
                         toolbarName.visibility = View.VISIBLE
 
                         changeFragment(HomeFragment(),false)
@@ -331,19 +99,11 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
 
                         return true
                     }
-             /*       R.id.navigation_fav -> {
 
-                        toolbarName.text =getString(R.string.favorite)
-                        addressLL.visibility=View.GONE
-                        toolbarName.visibility = View.VISIBLE
-
-                        changeFragment(HomeFragment(),false)
-                        return true
-                    }*/
                     R.id.navigation_account -> {
 
                         toolbarName.text =getString(R.string.my_account)
-                        addressLL.visibility=View.GONE
+
                         toolbarName.visibility = View.VISIBLE
 
                         changeFragment(MyAccountFragment(),false)
@@ -355,7 +115,7 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
         }
 
     override fun onClick(p0: View?) {
-        drawerLayout.closeDrawer(GravityCompat.START)
+
         if (p0 == null) {
           /*  mLoginViewModel?.logoutApi(
                 sessionManager?.loginResult?.id
@@ -373,14 +133,9 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
                 )
             }*/
             R.id.toolbarMenu ->
-                drawerLayout.openDrawer(GravityCompat.START)
-       /*     R.id.mAddress -> startActivity(Intent(this, ChangeCurrentLocation::class.java))
-            R.id.about_us -> mCallStaticPage(getString(R.string.about_us),ABOUT_US)
-            R.id.contactUs -> mCallStaticPage(getString(R.string.contact_us), CONTACT_US)
-            R.id.faq -> mCallStaticPage(getString(R.string.faq),FAQ)
-            R.id.help -> mCallStaticPage(getString(R.string.help), HELP)
-            R.id.notification_list ->  startActivity(Intent(this, NotificationActivity::class.java))
-            R.id.profileLayout -> startActivity(Intent(this, EditProfileActivity::class.java))*/
+            {
+
+            }
 
         }
     }

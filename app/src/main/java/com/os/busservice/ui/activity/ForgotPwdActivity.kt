@@ -15,6 +15,7 @@ import com.os.busservice.utility.AppDelegate
 import com.os.busservice.utility.ProgressDialog
 import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.forgot_pwd_activity.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 
 class ForgotPwdActivity : BaseBindingActivity(), View.OnClickListener {
@@ -32,6 +33,8 @@ class ForgotPwdActivity : BaseBindingActivity(), View.OnClickListener {
 
     override fun initializeObject() {
         mActivity = this
+
+        toolbarName.text = getString(R.string.forgot_password)
 
         mViewModel!!.error.observe(this, Observer {
             AppDelegate.showToast(this, it)

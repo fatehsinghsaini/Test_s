@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "536882302748",
+    "firebase_url": "https://rajway-ce45e.firebaseio.com",
+    "project_id": "rajway-ce45e",
+    "storage_bucket": "rajway-ce45e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536882302748:android:38bfe5a8d84be1d0a374d9",
+        "android_client_info": {
+          "package_name": "com.os.busservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536882302748-ukciaphuuqfnogege0igrikbeg7sbeuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuF654S1H-OGU_D8hISNfg45H8jXt_7FI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536882302748-ukciaphuuqfnogege0igrikbeg7sbeuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

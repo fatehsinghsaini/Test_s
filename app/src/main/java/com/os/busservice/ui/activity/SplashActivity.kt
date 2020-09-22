@@ -32,10 +32,10 @@ class SplashActivity :AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             delay(3000)
 
-          /*  val intent = if (mSessionManager!!.isLogin!!)
-                Intent(baseContext, MainActivity::class.java)
+            val intent = if (mSessionManager!!.isLogin!!)
+                Intent(baseContext, DashBoardActivity::class.java)
             else
-                Intent(baseContext, LocationActivity::class.java)*/
+                Intent(baseContext, LoginActivity::class.java)
 
             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
             finish()
@@ -44,7 +44,6 @@ class SplashActivity :AppCompatActivity() {
     }
 
     private fun keyHashGen() {
-
         // Add code to print out the key hash
         // Add code to print out the key hash
         try {
