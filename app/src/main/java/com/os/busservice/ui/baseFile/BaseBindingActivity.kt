@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.facebook.*
 import com.facebook.internal.CallbackManagerImpl
@@ -282,14 +283,14 @@ abstract class BaseBindingActivity : AppCompatActivity(){
         }
     }
 
-/*     fun changeFragment(fragment: Fragment, isAddToBack: Boolean) {
+     fun changeFragment(fragment: Fragment, isAddToBack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout, fragment, fragment.javaClass.name)
         if (isAddToBack && supportFragmentManager.findFragmentByTag(fragment.tag) == null) transaction.addToBackStack(
             fragment.javaClass.name
         )
         transaction.commit()
-    }*/
+    }
 
      fun changeToolbarTitle(title: String) {
 

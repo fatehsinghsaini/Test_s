@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.facebook.FacebookSdk
 import com.facebook.login.LoginManager
 import com.os.busservice.R
 import com.os.busservice.data.ApiResponse
@@ -48,6 +49,8 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
     }
 
     override fun createActivityObject() {
+
+        FacebookSdk.sdkInitialize(this)
 
     }
 

@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
+abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
     private var mNavViewHeader: View?=null
     private var mBinding: ActivityDashboardBinding?=null
     private var mLoginViewModel: LoginViewModel?=null
@@ -184,8 +184,6 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
         }
     }
 
-    override fun changeFragment(fragment: Fragment, isAddToBackStack: Boolean) {
 
-    }
 
 }
