@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/textWhite">
+        android:background="@color/textWhite"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,6 +19,7 @@
             android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:paddingBottom="@dimen/_30sdp"
+            app:layout_constraintTop_toTopOf="parent"
             >
 
             <TextView
@@ -40,17 +44,24 @@
                 android:layout_marginEnd="@dimen/_25sdp"
                 app:cardCornerRadius="@dimen/_6sdp"
 
+
                 >
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_20sdp"
+                    >
 
                     <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/source_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enter_source">
+                        android:hint="@string/enter_source"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/TextStyleNormal"
@@ -66,10 +77,12 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_destination"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_source"
                         android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/source_input"
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -87,9 +100,11 @@
 
 
                     <RelativeLayout
+                        android:id="@+id/dob_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/input_destination"
                         >
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/TextStyleNormal"
@@ -138,28 +153,112 @@
                     <Button
                         android:id="@+id/bt_search"
                         style="@style/TextStyleLarge"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginEnd="@dimen/_10sdp"
                         android:textColor="@color/black"
                         android:text="@string/search"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
                         android:background="@color/bt_colorYellow"
                         android:textSize="@dimen/_12sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/dob_input"
+                        />
+
+                    <ImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintTop_toBottomOf="@+id/source_input"
+                        app:layout_constraintBottom_toTopOf="@+id/input_destination"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
                         />
 
 
 
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/TextStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/recent_booking"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/recent_booking_item"
+                tools:itemCount="3"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+
+                />
+
+
+            <TextView
+                style="@style/TextStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/latest_offer"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textAllCaps="true"
+
+                />
+            <RelativeLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                    android:id="@+id/layoutDots"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:dotsColor="@color/colorPrimary"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="@dimen/_7sdp"
+                    app:dotsSpacing="4dp"
+                    app:dotsStrokeColor="@color/textGray"
+                    app:dotsStrokeWidth="2dp"
+
+                    />
+
+
+            </RelativeLayout>
+
+
+
+
 
 
         </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </layout>

@@ -119,6 +119,9 @@
     <string name="today">Today</string>
     <string name="tomarrow">Tomorrow</string>
     <string name="search">Search</string>
+    <string name="book_now">Book Now</string>
+    <string name="recent_booking">Recent Booking</string>
+    <string name="latest_offer">Latest Offer</string>
 
 
 </resources>
