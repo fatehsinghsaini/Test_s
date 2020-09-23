@@ -116,6 +116,9 @@
     <string name="dont_receive_otp">"Didn't receive the OTP"</string>
     <string name="bus_ticket">Bus Ticket</string>
     <string name="enter_source">Enter Source Name</string>
+    <string name="today">Today</string>
+    <string name="tomarrow">Tomorrow</string>
+    <string name="search">Search</string>
 
 
 </resources>

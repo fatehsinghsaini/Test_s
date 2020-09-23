@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.os.busservice.R
 import com.os.busservice.model.FbDetails
 import com.os.busservice.model.SocialModel
 import com.os.busservice.ui.viewModel.LoginViewModel
@@ -283,7 +284,7 @@ abstract class BaseBindingActivity : AppCompatActivity(){
         }
     }
 
-     fun changeFragment(fragment: Fragment, isAddToBack: Boolean) {
+    fun changeFragment(fragment: Fragment, isAddToBack: Boolean) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout, fragment, fragment.javaClass.name)
         if (isAddToBack && supportFragmentManager.findFragmentByTag(fragment.tag) == null) transaction.addToBackStack(
@@ -292,7 +293,8 @@ abstract class BaseBindingActivity : AppCompatActivity(){
         transaction.commit()
     }
 
-     fun changeToolbarTitle(title: String) {
+
+    fun changeToolbarTitle(title: String) {
 
     }
 

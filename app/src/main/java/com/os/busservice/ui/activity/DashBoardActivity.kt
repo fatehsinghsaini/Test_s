@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
+ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
     private var mNavViewHeader: View?=null
     private var mBinding: ActivityDashboardBinding?=null
     private var mLoginViewModel: LoginViewModel?=null
@@ -60,7 +60,6 @@ abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCa
 
         } else{
 
-            toolbarName.visibility  =View.GONE
             bottom_navigation.selectedItemId = R.id.navigation_home
             changeFragment(HomeFragment(), false)
         }
@@ -75,14 +74,12 @@ abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCa
         object : BottomNavigationView.OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
 
-                toolbarName.visibility = View.GONE
                 supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 
                 when (item.itemId) {
                     R.id.navigation_home -> {
                         toolbarName.text =getString(R.string.home)
 
-                        toolbarName.visibility = View.GONE
                         changeFragment(HomeFragment(),false)
                         return true
                     }
@@ -90,7 +87,6 @@ abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCa
 
                         toolbarName.text =getString(R.string.booking)
 
-                        toolbarName.visibility = View.VISIBLE
 
                         changeFragment(HomeFragment(),false)
                         return true
@@ -104,7 +100,6 @@ abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCa
 
                         toolbarName.text =getString(R.string.my_account)
 
-                        toolbarName.visibility = View.VISIBLE
 
                         changeFragment(MyAccountFragment(),false)
                         return true
@@ -183,7 +178,6 @@ abstract class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCa
 
         }
     }
-
 
 
 }

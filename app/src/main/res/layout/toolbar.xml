@@ -39,7 +39,7 @@
                 android:src="@drawable/ic_menu"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/_4sdp"
-                android:visibility="gone"
+                android:visibility="visible"
                 />
 
             <ImageView
