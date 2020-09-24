@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:background="@color/colorPrimary"
+    >
+
+    <TextView
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_air_conditioner"
+
+        android:text="@string/ac"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        />
+    <TextView
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_fan"
+        android:text="@string/non_ac"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        />
+    <TextView
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_fan"
+        android:text="@string/seater"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        />
+    <TextView
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_fan"
+        android:text="@string/sleeper"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        />
+
+
+</LinearLayout>

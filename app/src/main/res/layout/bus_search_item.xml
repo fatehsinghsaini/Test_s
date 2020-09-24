@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_6sdp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Saini Bus Service"
+            android:textSize="@dimen/_12sdp"
+            android:layout_weight=".8"
+            />
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="09:30 PM"
+            android:textSize="@dimen/_12sdp"
+            android:layout_weight=".2"
+            android:gravity="end"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_6sdp"
+        android:paddingEnd="@dimen/_6sdp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="A/C Sleeper(2+1)"
+            android:layout_weight=".8"
+            />
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06:30 PM"
+            android:layout_weight=".2"
+            android:gravity="end"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_6sdp"
+        android:paddingEnd="@dimen/_6sdp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="29 Seats"
+            android:layout_weight=".5"
+            />
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Journey of Bus : 7.5 Hours"
+            android:layout_weight=".5"
+            android:gravity="end"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_6sdp"
+        android:paddingEnd="@dimen/_6sdp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:layout_marginTop="@dimen/_6sdp"
+
+            >
+            <TextView
+                style="@style/TextStyleNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:drawableStart="@drawable/ic_baseline_star_24"
+                android:background="@drawable/rating_back"
+                android:paddingStart="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_5sdp"
+
+                />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="From INR 254"
+            android:layout_weight=".5"
+            android:gravity="end"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/colorPrimary"
+            />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textGray"
+        android:layout_marginTop="@dimen/_8sdp"
+        />
+
+
+
+</LinearLayout>

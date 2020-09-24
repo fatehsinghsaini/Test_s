@@ -125,6 +125,10 @@
     <string name="latest_offer">Latest Offer</string>
     <string name="near_by">Near By</string>
     <string name="or">or</string>
+    <string name="ac">AC</string>
+    <string name="non_ac">NonAC</string>
+    <string name="seater">Seater</string>
+    <string name="sleeper">Sleeper</string>
 
 
 </resources>
