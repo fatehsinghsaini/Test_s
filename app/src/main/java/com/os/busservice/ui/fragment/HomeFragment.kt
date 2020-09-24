@@ -16,6 +16,7 @@ import com.os.busservice.ui.adapter.ImagePagerAdapter
 import com.os.busservice.ui.adapter.RecentBookingAdapter
 import com.os.busservice.ui.baseFile.BaseFragment
 import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.home_fragment.view.*
 
 
 class HomeFragment : BaseFragment<DashBoardActivity>(),CommonListener{
@@ -39,8 +40,8 @@ class HomeFragment : BaseFragment<DashBoardActivity>(),CommonListener{
         mImageList.add("https://ibb.co/7nC2RrQ")
 
         mImagePagerAdapter = ImagePagerAdapter(activity!!, mImageList)
-        view_pager.adapter = mImagePagerAdapter
-        layoutDots.setViewPager(view_pager)
+        mView?.root?.view_pager?.adapter = mImagePagerAdapter
+        mView!!.root.layoutDots.setViewPager(mView?.root?.view_pager?.view_pager!!)
 
         mRecentBookAdapter = RecentBookingAdapter(this)
 

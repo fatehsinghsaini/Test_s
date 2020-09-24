@@ -115,13 +115,16 @@
     <string name="verification">Verification</string>
     <string name="dont_receive_otp">"Didn't receive the OTP"</string>
     <string name="bus_ticket">Bus Ticket</string>
-    <string name="enter_source">Enter Source Name</string>
+    <string name="enter_source">ENTER SOURCE</string>
+    <string name="enter_destination">ENTER DESTINATION</string>
     <string name="today">Today</string>
     <string name="tomarrow">Tomorrow</string>
     <string name="search">Search</string>
     <string name="book_now">Book Now</string>
     <string name="recent_booking">Recent Booking</string>
     <string name="latest_offer">Latest Offer</string>
+    <string name="near_by">Near By</string>
+    <string name="or">or</string>
 
 
 </resources>

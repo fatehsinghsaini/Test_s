@@ -27,15 +27,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_5sdp"
-            android:text="@{mItem}"
+            android:text="Jaipur(Rajasthan) -New Delhi"
             android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
             />
         <TextView
             style="@style/TextStyleNormal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_5sdp"
-            android:text="@{mItem}"
+            android:text="Sun,12July 2020"
             android:textColor="@color/black"
             />
 
@@ -47,13 +48,14 @@
 
         <TextView
             android:id="@+id/bookNow"
-            style="@style/TextStyleBold"
+            style="@style/TextStyleSemiBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/book_now"
             android:textColor="@color/colorPrimary"
-            android:layout_gravity="end"
-            android:padding="@dimen/_6sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:textSize="@dimen/_12sdp"
             />
 
 

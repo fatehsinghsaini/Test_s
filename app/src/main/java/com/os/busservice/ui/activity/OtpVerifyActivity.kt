@@ -50,6 +50,7 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
         mActivity = this
         toolbarName.text = getString(R.string.verification)
         txt_resend.isEnabled = false
+        txt_label3.visibility =View.GONE
         setTimerForOTP()
 
         /*if (intent.hasExtra(Tags.DATA)) {
@@ -157,6 +158,7 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
                     timer!!.dispose()
                     txt_resend.text = getString(R.string.resend_code)
                     txt_resend.isEnabled = true
+                    txt_label3.visibility =View.VISIBLE
                 }
             },
                 { error -> Log.e("TAG", "{$error.message}") },
