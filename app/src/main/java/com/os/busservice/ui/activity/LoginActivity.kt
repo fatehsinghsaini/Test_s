@@ -35,8 +35,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-private val PERMISSIONS_REQUEST_CODE = 10
-private val PERMISSIONS_REQUIRED = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION )
+
 class LoginActivity : BaseBindingActivity(), View.OnClickListener {
     private var binding: ActivityLoginBinding? = null
     private var mViewModel: LoginViewModel? = null
@@ -185,10 +184,6 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
         LoginManager.getInstance().logOut()
     }
 
-    /** Convenience method used to check if all permissions required by this app are granted */
-    fun hasPermissions(context: Context) = PERMISSIONS_REQUIRED.all {
-        ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
-    }
 
     // A reference to the service used to get location updates.
     private var mService: LocationUpdatesService? = null

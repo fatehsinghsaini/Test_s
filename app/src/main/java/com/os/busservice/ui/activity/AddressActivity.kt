@@ -44,12 +44,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-private val PERMISSIONS_REQUEST_CODE = 10
-private val PERMISSIONS_REQUIRED = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION )
+
 
 class AddressActivity : BaseBindingActivity(),OnMapReadyCallback, GoogleMap.OnCameraMoveListener,GoogleMap.OnCameraIdleListener {
     private var mMap: GoogleMap? = null
-  /*  private var mCartViewModel:CartViewModel?=null*/
     private var mSelectedLat:Double=0.0
     private var mSelectedLlng:Double=0.0
     private val AUTOCOMPLETE_REQUEST_CODE = 1
@@ -187,10 +185,6 @@ class AddressActivity : BaseBindingActivity(),OnMapReadyCallback, GoogleMap.OnCa
 
 
 
-    /** Convenience method used to check if all permissions required by this app are granted */
-    fun hasPermissions(context: Context) = PERMISSIONS_REQUIRED.all {
-        ContextCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
-    }
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onRequestPermissionsResult(
