@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mListener"
+            type="com.os.busservice.listeners.CommonListener" />
+
+        <variable
+            name="item"
+            type="com.os.busservice.model.address.AddressResult" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> mListener.mOnItemClick(item)}"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@mipmap/ic_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:civ_border_color="@color/textGray"
+            app:civ_border_width="@dimen/_1sdp"
+           android:padding="@dimen/_4sdp"
+            />
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+
+            >
+
+            <TextView
+                style="@style/TextStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="School Bus Group"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="School Bus Group" />
+
+            <TextView
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="School Bus Group" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/textGray"
+            app:layout_constraintTop_toBottomOf="@+id/mainLayout"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

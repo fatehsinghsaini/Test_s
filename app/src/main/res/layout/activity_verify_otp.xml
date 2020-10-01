@@ -91,8 +91,9 @@
                 android:layout_height="@dimen/_35sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:background="@drawable/back_round_primary"
+                android:backgroundTint="@color/bt_colorYellow"
                 android:text="@string/submit"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_15sdp"
                 android:visibility="visible"
                 app:layout_constraintTop_toBottomOf="@+id/ll_otp" />

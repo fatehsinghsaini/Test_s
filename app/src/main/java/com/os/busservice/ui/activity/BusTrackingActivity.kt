@@ -1,5 +1,4 @@
 package com.os.busservice.ui.activity
-
 import android.annotation.SuppressLint
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -9,14 +8,18 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.os.busservice.R
 import com.os.busservice.databinding.BusTrackingActivityBinding
+import com.os.busservice.listeners.CommonListener
+import com.os.busservice.model.address.AddressResult
+import com.os.busservice.ui.adapter.BusSearchItemAdapter
+import com.os.busservice.ui.adapter.BusTrackingItemAdapter
 import com.os.busservice.ui.baseFile.BaseBindingActivity
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
-
-
-class BusTrackingActivity : BaseBindingActivity(), OnMapReadyCallback, GoogleMap.OnCameraMoveListener,GoogleMap.OnCameraIdleListener {
+class BusTrackingActivity : BaseBindingActivity(), OnMapReadyCallback, GoogleMap.OnCameraMoveListener,GoogleMap.OnCameraIdleListener,CommonListener {
 
     private var mMap: GoogleMap? = null
     private var mBinding: BusTrackingActivityBinding?=null
+    private lateinit var mAdapter: BusTrackingItemAdapter
 
 
     override fun setBinding() {
@@ -24,16 +27,25 @@ class BusTrackingActivity : BaseBindingActivity(), OnMapReadyCallback, GoogleMap
     }
 
     override fun createActivityObject() {
+        mAdapter = BusTrackingItemAdapter(this)
+
 
     }
 
     override fun initializeObject() {
         mActivity =this
+        mBinding?.mAdapter =mAdapter
+
+        toolbarName.text = getString(R.string.track_bus)
 
 
     }
 
     override fun setListeners() {
+
+        back.setOnClickListener{
+            finish()
+        }
 
     }
 
@@ -77,6 +89,10 @@ class BusTrackingActivity : BaseBindingActivity(), OnMapReadyCallback, GoogleMap
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+    }
+
+    override fun mOnItemClick(item: AddressResult?) {
+
     }
 
 

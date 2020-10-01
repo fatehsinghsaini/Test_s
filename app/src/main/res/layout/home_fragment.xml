@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+       <variable
+           name="mAdapter"
+           type="com.os.busservice.ui.adapter.RecentBookingAdapter" />
     </data>
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +20,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/_30sdp"
+            android:paddingBottom="@dimen/_20sdp"
             app:layout_constraintTop_toTopOf="parent"
             >
 
@@ -30,200 +32,208 @@
                 android:text="@string/bus_ticket"
                 android:textColor="@color/white" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@mipmap/ic_launcher" />
-
-            <androidx.cardview.widget.CardView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginEnd="@dimen/_25sdp"
-                app:cardCornerRadius="@dimen/_6sdp"
+                android:layout_height="wrap_content">
 
+                <ImageView
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/top_logo" />
 
-                >
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+
+
                     >
 
-                    <com.google.android.material.textfield.TextInputLayout
-                     android:id="@+id/source_input"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enter_source"
-
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10sdp"
                         >
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/TextStyleNormal"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:drawableStart="@drawable/ic_baseline_home_24"
-                            android:drawablePadding="@dimen/_6sdp"
-                            android:imeOptions="actionNext"
-                            android:inputType="textCapSentences"
-
-                            android:padding="@dimen/_10sdp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/input_destination"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/enter_destination"
-                        app:layout_constraintTop_toBottomOf="@+id/source_input"
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/TextStyleNormal"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:drawableStart="@drawable/ic_baseline_home_24"
-                            android:drawablePadding="@dimen/_6sdp"
-                            android:imeOptions="actionNext"
-                            android:inputType="textCapSentences"
-                            android:padding="@dimen/_10sdp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <RelativeLayout
-                        android:id="@+id/dob_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/input_destination"
-
-                        >
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/TextStyleBold"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/source_input"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_baseline_home_24"
-                            android:drawablePadding="@dimen/_6sdp"
-                            android:imeOptions="actionNext"
-                            android:inputType="textCapSentences"
-                            android:text="Mon,5 July"
-                            android:textColor="@color/black"
-                            android:padding="@dimen/_10sdp" />
+                            android:hint="@string/enter_source"
 
-                        <LinearLayout
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/TextStyleNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/ic_bus"
+                                android:drawablePadding="@dimen/_6sdp"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+
+                                android:padding="@dimen/_10sdp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_destination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/enter_destination"
+                            app:layout_constraintTop_toBottomOf="@+id/source_input"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/TextStyleNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/ic_bus"
+                                android:drawablePadding="@dimen/_6sdp"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:padding="@dimen/_10sdp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/dob_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@+id/input_destination"
+
+                            >
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/TextStyleBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_date"
+                                android:drawablePadding="@dimen/_6sdp"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:text="Mon,5 July"
+                                android:textColor="@color/black"
+                                android:padding="@dimen/_10sdp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_centerVertical="true"
+                                >
+                                <TextView
+                                    style="@style/TextStyleSemiBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/today"
+                                    android:textColor="@color/colorPrimary"
+                                    android:paddingStart="@dimen/_5sdp"
+                                    android:paddingEnd="@dimen/_5sdp"
+                                    />
+                                <TextView
+                                    style="@style/TextStyleSemiBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tomarrow"
+                                    android:textColor="@color/colorPrimary"
+                                    android:paddingStart="@dimen/_5sdp"
+                                    android:paddingEnd="@dimen/_5sdp"
+                                    />
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/bt_search"
+                            style="@style/TextStyleLarge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:text="@string/search"
+                            android:textAllCaps="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@drawable/back_round_primary"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/dob_input"
+                            android:backgroundTint="@color/bt_colorYellow"
+                            />
+
+                        <TextView
+                            android:id="@+id/ortxt"
+                            style="@style/TextStyleSemiBold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:layout_centerVertical="true"
-                            >
-                            <TextView
-                                style="@style/TextStyleNormal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/today"
-                                android:textColor="@color/colorPrimary"
-                                android:paddingStart="@dimen/_5sdp"
-                                android:paddingEnd="@dimen/_5sdp"
-                                />
-                            <TextView
-                                style="@style/TextStyleNormal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tomarrow"
-                                android:textColor="@color/colorPrimary"
-                                android:paddingStart="@dimen/_5sdp"
-                                android:paddingEnd="@dimen/_5sdp"
-                                />
+                            app:layout_constraintTop_toBottomOf="@+id/bt_search"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/or"
+                            android:visibility="visible"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
 
+                            />
 
-                        </LinearLayout>
+                        <Button
+                            android:id="@+id/nearBy"
+                            style="@style/TextStyleLarge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:textColor="@color/white"
+                            android:text="@string/near_by"
+                            android:visibility="visible"
+                            android:textAllCaps="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:background="@drawable/back_round_primary"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/ortxt"
+                            />
 
-                    </RelativeLayout>
-
-                    <Button
-                        android:id="@+id/bt_search"
-                        style="@style/TextStyleLarge"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:textColor="@color/black"
-                        android:text="@string/search"
-
-                        android:textAllCaps="true"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:layout_marginEnd="@dimen/_20sdp"
-                        android:background="@drawable/back_round_primary"
-                        android:textSize="@dimen/_12sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/dob_input"
-                        android:backgroundTint="@color/bt_colorYellow"
-                        />
-
-                    <TextView
-                        android:id="@+id/ortxt"
-                        style="@style/TextStyleSemiBold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@+id/bt_search"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/or"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-
-                        />
-
-                    <Button
-                        android:id="@+id/nearBy"
-                        style="@style/TextStyleLarge"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:textColor="@color/white"
-                        android:text="@string/near_by"
-                        android:textAllCaps="true"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:layout_marginEnd="@dimen/_20sdp"
-                        android:background="@drawable/back_round_primary"
-                        android:textSize="@dimen/_12sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/ortxt"
-                        />
-
-                    <ImageView
-                        android:layout_width="@dimen/_30sdp"
-                        android:layout_height="@dimen/_30sdp"
-                        android:src="@drawable/ic_arrow_down"
-                        app:layout_constraintTop_toBottomOf="@+id/source_input"
-                        app:layout_constraintBottom_toTopOf="@+id/input_destination"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginEnd="@dimen/_12sdp"
-                        android:layout_marginStart="@dimen/_12sdp"
-                        android:background="@drawable/back_round"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        />
+                        <ImageView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:src="@drawable/ic_location"
+                            app:layout_constraintTop_toBottomOf="@+id/source_input"
+                            app:layout_constraintBottom_toTopOf="@+id/input_destination"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:background="@drawable/back_round"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            />
 
 
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+
+            </FrameLayout>
+
 
             <TextView
                 style="@style/TextStyleBold"
@@ -235,7 +245,6 @@
                 android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:textSize="@dimen/_12sdp"
-
                 />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -245,9 +254,10 @@
                 tools:itemCount="3"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-
+                android:adapter="@{mAdapter}"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_30sdp"
                 />
 
 
@@ -267,16 +277,17 @@
             <RelativeLayout
                 android:id="@+id/topLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_150sdp"
+                android:layout_height="@dimen/_120sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
                 >
 
-                <androidx.viewpager.widget.ViewPager
+                <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+
+                  />
 
                 <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
                     android:id="@+id/layoutDots"
@@ -286,13 +297,12 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    app:dotsColor="@color/colorPrimary"
+                    app:dotsColor="@color/white"
                     app:dotsCornerRadius="8dp"
                     app:dotsSize="@dimen/_7sdp"
                     app:dotsSpacing="4dp"
-                    app:dotsStrokeColor="@color/textGray"
+                    app:dotsStrokeColor="@color/white"
                     app:dotsStrokeWidth="2dp"
-
                     />
 
 

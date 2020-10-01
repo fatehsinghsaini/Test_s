@@ -37,7 +37,7 @@
                 android:layout_height="@dimen/_80sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_logo" />
 
             <TextView
                 style="@style/TextStyleBoldExtraLarge"
@@ -86,19 +86,18 @@
             </LinearLayout>
 
 
-            <ImageView
+            <Button
                 android:id="@+id/bt_login"
-                style="@style/TextStyleBold"
-                android:layout_width="@dimen/buttonSize"
-                android:layout_height="@dimen/buttonSize"
-                android:layout_gravity="end"
-                android:layout_marginTop="@dimen/_25sdp"
-                android:padding="@dimen/_10sdp"
-                android:background="@drawable/circle_primary"
-                android:contentDescription="@string/submit"
-                android:src="@drawable/ic_back_arrow"
-                android:rotation="180"
-                android:textColor="@color/textWhite" />
+                style="@style/TextStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:text="@string/next_step"
+                android:background="@drawable/back_round_primary"
+                android:backgroundTint="@color/bt_colorYellow"
+                android:textSize="@dimen/_12sdp"
+                />
 
 
 

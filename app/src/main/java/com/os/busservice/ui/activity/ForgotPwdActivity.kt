@@ -49,6 +49,7 @@ class ForgotPwdActivity : BaseBindingActivity(), View.OnClickListener {
     override fun setListeners() {
         signUpTxt.setOnClickListener(this)
         bt_login.setOnClickListener(this)
+        back.setOnClickListener(this)
 
     }
 
@@ -62,6 +63,7 @@ class ForgotPwdActivity : BaseBindingActivity(), View.OnClickListener {
             R.id.bt_login -> {
                 mViewModel?.forgotPwd()
             }
+            R.id.back -> finish()
         }
 
     }

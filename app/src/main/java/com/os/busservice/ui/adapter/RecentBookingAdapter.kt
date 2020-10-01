@@ -19,7 +19,7 @@ class RecentBookingAdapter(var mCartListener: CommonListener) : RecyclerBaseAdap
     override fun putViewDataBinding(binding: ViewDataBinding) {
         if (binding is RecentBookingItemBinding) {
 
-            val item = mList[mPos]
+//            val item = mList[mPos]
 //            binding.mItem = item
            /* binding.defaultCheckBox.isChecked = item.is_default == "yes"
 
@@ -37,11 +37,11 @@ class RecentBookingAdapter(var mCartListener: CommonListener) : RecyclerBaseAdap
     }
 
     override fun getViewModel(position: Int) {
-        mList[position]
-        mPos = position
+  /*      mList[position]
+        mPos = position*/
     }
 
-    override fun getItemCount(): Int = mList.size
+    override fun getItemCount(): Int = 3
 
     fun mUpdateList(list: ArrayList<String>) {
         mList = list

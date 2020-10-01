@@ -303,7 +303,8 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/black"
                     android:text="@string/next_step"
-                    android:background="@color/bt_colorYellow"
+                    android:background="@drawable/back_round_primary"
+                    android:backgroundTint="@color/bt_colorYellow"
                     android:textSize="@dimen/_12sdp"
                     />
 
@@ -314,6 +315,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:gravity="center"
                     android:text="@string/or_signup_with" />
 

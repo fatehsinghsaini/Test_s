@@ -3,4 +3,7 @@
     <dimen name="viewGap">@dimen/_6sdp</dimen>
     <dimen name="buttonSize">@dimen/_50sdp</dimen>
     <dimen name="button_height">@dimen/_37sdp</dimen>
+    <dimen name="viewpager_next_item_visible">26dp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">32dp</dimen>
+
 </resources>

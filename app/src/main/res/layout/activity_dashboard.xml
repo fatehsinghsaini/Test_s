@@ -25,6 +25,7 @@
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"
                 app:baseUrl="@{baseUrl}"
+                android:visibility="visible"
                 app:sessionManager="@{sessionManager}" />
 
             <FrameLayout

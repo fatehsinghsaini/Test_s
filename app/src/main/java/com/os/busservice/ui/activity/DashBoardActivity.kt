@@ -16,6 +16,7 @@ import com.os.busservice.databinding.ActivityDashboardBinding
 import com.os.busservice.model.CommonResponse
 import com.os.busservice.ui.baseFile.ActivityFromFragmentCallack
 import com.os.busservice.ui.baseFile.BaseBindingActivity
+import com.os.busservice.ui.fragment.GroupFragment
 import com.os.busservice.ui.fragment.HomeFragment
 import com.os.busservice.ui.fragment.MyAccountFragment
 import com.os.busservice.ui.viewModel.LoginViewModel
@@ -25,10 +26,11 @@ import com.os.busservice.utility.Tags
 import com.os.busservice.utility.Tags.FAQ
 import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
- class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
+class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,View.OnClickListener {
     private var mNavViewHeader: View?=null
     private var mBinding: ActivityDashboardBinding?=null
     private var mLoginViewModel: LoginViewModel?=null
@@ -67,7 +69,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
     override fun setListeners() {
         bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
-        toolbarMenu.setOnClickListener(this)
+
     }
 
     private var navigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
@@ -75,17 +77,20 @@ import kotlinx.android.synthetic.main.toolbar.*
             override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
 
                 supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                toolbarNameMain.visibility =View.GONE
+                toolbarName.visibility =View.VISIBLE
+                back.visibility =View.VISIBLE
 
                 when (item.itemId) {
                     R.id.navigation_home -> {
-                        toolbarName.text =getString(R.string.home)
+//                        toolbarName.text =getString(R.string.home)
 
                         changeFragment(HomeFragment(),false)
                         return true
                     }
                     R.id.navigation_order -> {
 
-                        toolbarName.text =getString(R.string.booking)
+//                        toolbarName.text =getString(R.string.booking)
 
 
                         changeFragment(HomeFragment(),false)
@@ -98,10 +103,19 @@ import kotlinx.android.synthetic.main.toolbar.*
 
                     R.id.navigation_account -> {
 
-                        toolbarName.text =getString(R.string.my_account)
+//                        toolbarName.text =getString(R.string.my_account)
 
 
                         changeFragment(MyAccountFragment(),false)
+                        return true
+                    }
+                    R.id.navigation_group -> {
+                        toolbarMain.visibility =View.VISIBLE
+                        toolbarNameMain.visibility =View.GONE
+                        back.visibility =View.GONE
+                        toolbarName.text =getString(R.string.my_account)
+
+                        changeFragment(GroupFragment(),false)
                         return true
                     }
                 }
@@ -127,10 +141,7 @@ import kotlinx.android.synthetic.main.toolbar.*
                     this
                 )
             }*/
-            R.id.toolbarMenu ->
-            {
 
-            }
 
         }
     }
