@@ -11,8 +11,11 @@ import android.text.format.DateUtils
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.widget.TextViewCompat
+import com.google.android.material.tabs.TabLayout
 import com.os.busservice.R
 import com.os.busservice.utility.network.NetworkUtils
 
@@ -535,6 +538,15 @@ object AppDelegate {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
+    fun tabsStyle(tab: TabLayout.Tab?, mStyle:Int){
+        val views = arrayListOf<View>()
+        tab?.view?.findViewsWithText(views, tab.text, View.FIND_VIEWS_WITH_TEXT)
+        views.forEach { view ->
+            if (view is TextView) {
+                TextViewCompat.setTextAppearance(view, mStyle)
+            }
+        }
+    }
 
 
 }
