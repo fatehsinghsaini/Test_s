@@ -46,6 +46,7 @@
         <activity android:name=".ui.activity.ForgotPwdActivity" />
         <activity android:name=".ui.activity.BusSearchListing" />
         <activity android:name=".ui.activity.GroupDetailsActivity" />
+        <activity android:name=".ui.activity.BusSeatActivity" />
     </application>
 
 </manifest>

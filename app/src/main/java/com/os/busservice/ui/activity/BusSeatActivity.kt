@@ -53,9 +53,12 @@ class BusSeatActivity :BaseBindingActivity(),TabLayout.OnTabSelectedListener {
     }
 
     override fun onTabSelected(tab: TabLayout.Tab?) {
+        AppDelegate.tabsStyle(tab,R.style.TextStyleNormalTabsSelected)
+
     }
 
     override fun onTabUnselected(tab: TabLayout.Tab?) {
+        AppDelegate.tabsStyle(tab,R.style.TextStyleNormalTabs)
     }
 
     override fun onTabReselected(tab: TabLayout.Tab?) {
