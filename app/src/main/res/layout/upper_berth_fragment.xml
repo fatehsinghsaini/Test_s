@@ -6,7 +6,7 @@
 
         <variable
             name="mAdapter"
-            type="com.os.busservice.ui.adapter.seat.AirplaneAdapter" />
+            type="com.os.busservice.ui.adapter.seat.BusSeatAdapter" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

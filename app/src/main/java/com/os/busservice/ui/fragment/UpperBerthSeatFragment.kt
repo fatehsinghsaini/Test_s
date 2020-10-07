@@ -18,14 +18,14 @@ import com.os.busservice.model.seat.EmptyItem
 import com.os.busservice.ui.activity.BusSeatActivity
 import com.os.busservice.ui.activity.DashBoardActivity
 import com.os.busservice.ui.activity.GroupDetailsActivity
-import com.os.busservice.ui.adapter.seat.AirplaneAdapter
+import com.os.busservice.ui.adapter.seat.BusSeatAdapter
 import com.os.busservice.ui.baseFile.BaseFragment
 import kotlinx.android.synthetic.main.upper_berth_fragment.*
 
 
 class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
     private  var mBinging: UpperBerthFragmentBinding?=null
-    private var mAdapter:AirplaneAdapter?=null
+    private var mAdapter:BusSeatAdapter?=null
     private val COLUMNS = 5
 
     companion object {
@@ -61,7 +61,7 @@ class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
 
 
 
-        mAdapter = AirplaneAdapter(activity!!,items,this)
+        mAdapter = BusSeatAdapter(activity!!,items,this)
 
     }
 

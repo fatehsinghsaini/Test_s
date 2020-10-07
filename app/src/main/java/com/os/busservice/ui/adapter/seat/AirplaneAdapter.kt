@@ -12,7 +12,7 @@ import com.os.busservice.model.seat.AbstractItem
 import com.os.busservice.model.seat.CenterItem
 import com.os.busservice.model.seat.EdgeItem
 
-class AirplaneAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSelected: OnSeatSelected) :
+class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSelected: OnSeatSelected) :
     SelectableAdapter<RecyclerView.ViewHolder?>() {
 
     private class EdgeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
