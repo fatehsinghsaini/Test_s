@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.os.busservice.ui.fragment.UpperBerthSeatFragment
 import com.os.busservice.utility.Tags
 
-
 class SeatPagerAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
@@ -22,6 +21,6 @@ class SeatPagerAdapter(
 
 
     override fun getItemCount(): Int {
-        return 3
+        return 2
     }
 }

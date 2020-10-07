@@ -1,17 +1,14 @@
 package com.os.busservice.ui.adapter
-
 import androidx.databinding.ViewDataBinding
 import com.os.busservice.R
 import com.os.busservice.databinding.AddressItemBinding
 import com.os.busservice.databinding.BusSearchItemBinding
 import com.os.busservice.databinding.RecentBookingItemBinding
 import com.os.busservice.listeners.AddressListener
+import com.os.busservice.listeners.BusSearchListener
 import com.os.busservice.listeners.CommonListener
 import com.os.busservice.model.address.AddressResult
-
-
-class BusSearchItemAdapter(var mCartListener: CommonListener) : RecyclerBaseAdapter() {
-
+class BusSearchItemAdapter(var mCartListener: BusSearchListener) : RecyclerBaseAdapter() {
     var mList = ArrayList<String>()
     var mPos = 0
 
@@ -20,17 +17,6 @@ class BusSearchItemAdapter(var mCartListener: CommonListener) : RecyclerBaseAdap
     override fun putViewDataBinding(binding: ViewDataBinding) {
         if (binding is BusSearchItemBinding) {
             binding.mListener =mCartListener
-
-//            val item = mList[mPos]
-//            binding.mItem = item
-           /* binding.defaultCheckBox.isChecked = item.is_default == "yes"
-
-            binding.defaultCheckBox.setOnClickListener {
-                if (item.is_default != "yes")
-                    mCartListener.mOnItemClick(item)
-                else
-                    binding.defaultCheckBox.isChecked=true
-            }*/
 
         }
 

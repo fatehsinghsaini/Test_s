@@ -7,6 +7,8 @@
     android:orientation="vertical"
     >
 
+    <include layout="@layout/bus_seat_toolbar"/>
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -21,6 +23,9 @@
         app:tabBackground="@color/colorPrimary"
         app:tabMode="fixed"
         app:tabRippleColor="@null"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         />
 
     <androidx.viewpager2.widget.ViewPager2

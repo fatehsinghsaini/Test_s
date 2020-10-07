@@ -135,6 +135,8 @@
     <string name="share">Share</string>
     <string name="navigate">Navigate</string>
     <string name="make_payment">Make Payment</string>
+    <string name="non_refundable">Non-Refundable</string>
+    <string name="bus_tracking">Bus Tracking</string>
 
 
 </resources>

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="mListener"
-            type="com.os.busservice.listeners.CommonListener" />
+            type="com.os.busservice.listeners.BusSearchListener" />
         <variable
             name="mItem"
             type="com.os.busservice.model.address.AddressResult" />
@@ -13,7 +13,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:onClick="@{()-> mListener.mOnItemClick(mItem)}"
+    android:onClick="@{()-> mListener.mSeatSelected(mItem)}"
 
 
     >
@@ -144,6 +144,24 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/busTracking"
+        style="@style/TextStyleBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bus_tracking"
+        android:textColor="@color/textGray"
+        android:background="@drawable/back_round_primary"
+        android:paddingStart="@dimen/_6sdp"
+        android:paddingEnd="@dimen/_6sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:onClick="@{()-> mListener.mBusTrackingClick(mItem)}"
+        />
 
     <View
         android:layout_width="match_parent"
