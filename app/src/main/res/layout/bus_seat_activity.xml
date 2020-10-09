@@ -9,6 +9,17 @@
 
     <include layout="@layout/bus_seat_toolbar"/>
 
+    <com.google.android.material.card.MaterialCardView
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        >
+
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -17,16 +28,16 @@
         android:layout_below="@+id/toolbar"
         app:tabTextAppearance="@style/TextStyleNormalTabs"
         app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/textLightGray"
-        app:tabIndicatorColor="@color/colorPrimaryDark"
-        app:tabIndicatorHeight="2dp"
-        app:tabBackground="@color/colorPrimary"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/textLightGray"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@drawable/tab_color_selection"
         app:tabMode="fixed"
         app:tabRippleColor="@null"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_15sdp"
+
+
         />
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

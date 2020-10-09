@@ -32,10 +32,10 @@ class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLay
             AppDelegate.tabsStyle(tab,R.style.TextStyleNormal)
             when (position) {
                 0 -> {
-                    tab.text = getString(R.string.app_name)
+                    tab.text = getString(R.string.lower)
                     AppDelegate.tabsStyle(tab,R.style.TextStyleNormalTabsSelected)
                 }
-                else -> tab.text = getString(R.string.app_name)
+                else -> tab.text = getString(R.string.upper)
             }
 
         }.attach()

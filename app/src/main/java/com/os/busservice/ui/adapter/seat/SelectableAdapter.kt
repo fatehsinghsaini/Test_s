@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 abstract class SelectableAdapter<VH : RecyclerView.ViewHolder?> : RecyclerView.Adapter<VH>() {
-    private val selectedItems: SparseBooleanArray = SparseBooleanArray()
+    private val selectedItems: SparseBooleanArray
 
     /**
      * Indicates if the item at position position is selected
@@ -63,4 +63,7 @@ abstract class SelectableAdapter<VH : RecyclerView.ViewHolder?> : RecyclerView.A
         private val TAG = SelectableAdapter::class.java.simpleName
     }
 
+    init {
+        selectedItems = SparseBooleanArray()
+    }
 }

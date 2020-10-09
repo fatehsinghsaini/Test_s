@@ -137,6 +137,8 @@
     <string name="make_payment">Make Payment</string>
     <string name="non_refundable">Non-Refundable</string>
     <string name="bus_tracking">Bus Tracking</string>
+    <string name="lower">Lower</string>
+    <string name="upper">Upper</string>
 
 
 </resources>

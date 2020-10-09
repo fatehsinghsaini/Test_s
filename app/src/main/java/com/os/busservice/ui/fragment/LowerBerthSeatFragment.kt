@@ -20,11 +20,10 @@ import com.os.busservice.ui.activity.DashBoardActivity
 import com.os.busservice.ui.activity.GroupDetailsActivity
 import com.os.busservice.ui.adapter.seat.BusSeatAdapter
 import com.os.busservice.ui.baseFile.BaseFragment
-import com.os.busservice.utility.AppDelegate
 import kotlinx.android.synthetic.main.upper_berth_fragment.*
 
 
-class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
+class LowerBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
     private  var mBinging: UpperBerthFragmentBinding?=null
     private var mAdapter:BusSeatAdapter?=null
     private val COLUMNS = 5
@@ -36,9 +35,9 @@ class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
         @JvmStatic
         fun newInstance(
             tab_Type: String
-        ): UpperBerthSeatFragment {
+        ): LowerBerthSeatFragment {
             tabType = tab_Type
-            return UpperBerthSeatFragment()
+            return LowerBerthSeatFragment()
         }
     }
 
@@ -51,15 +50,16 @@ class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
 
         val items: MutableList<AbstractItem> = ArrayList()
         for (i in 0..29) {
-            AppDelegate.Log("Seat Count",(i % COLUMNS).toString())
-            if (i % COLUMNS == 0 || i % COLUMNS == 4) {
+            if (i % COLUMNS === 0 || i % COLUMNS === 4) {
                 items.add(EdgeItem(i.toString()))
-            } else if (i % COLUMNS == 1 || i % COLUMNS == 3) {
+            } else if (i % COLUMNS === 1 || i % COLUMNS === 3) {
                 items.add(CenterItem(i.toString()))
             } else {
                 items.add(EmptyItem(i.toString()))
             }
         }
+
+
 
         mAdapter = BusSeatAdapter(activity!!,items,this)
 

@@ -12,9 +12,11 @@ import com.os.busservice.model.seat.AbstractItem
 import com.os.busservice.model.seat.CenterItem
 import com.os.busservice.model.seat.EdgeItem
 
-class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSelected: OnSeatSelected) :
-    SelectableAdapter<RecyclerView.ViewHolder?>() {
-
+class BusSeatAdapter(
+    private val mContext: Context,
+    items: List<AbstractItem>,
+    private val mOnSeatSelected: OnSeatSelected
+) : SelectableAdapter<RecyclerView.ViewHolder?>() {
     private class EdgeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgSeat: ImageView
         val imgSeatSelected: ImageView
@@ -39,7 +41,6 @@ class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSele
         itemView!!
     )
 
-    private val mContext: Context
     private val mLayoutInflater: LayoutInflater
     private val mItems: List<AbstractItem>
     override fun getItemCount(): Int {
@@ -66,7 +67,7 @@ class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSele
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         val type = mItems[position].type
         if (type == AbstractItem.TYPE_CENTER) {
-            val item = mItems[position]
+            val item = mItems[position] as CenterItem
             val holder = viewHolder as CenterViewHolder
             holder.imgSeat.setOnClickListener {
                 toggleSelection(position)
@@ -75,7 +76,7 @@ class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSele
             holder.imgSeatSelected.visibility =
                 if (isSelected(position)) View.VISIBLE else View.INVISIBLE
         } else if (type == AbstractItem.TYPE_EDGE) {
-            val item = mItems[position]
+            val item = mItems[position] as EdgeItem
             val holder = viewHolder as EdgeViewHolder
             holder.imgSeat.setOnClickListener {
                 toggleSelection(position)
@@ -87,8 +88,7 @@ class BusSeatAdapter(context: Context, items: List<AbstractItem>,val mOnSeatSele
     }
 
     init {
-        mContext = context
-        mLayoutInflater = LayoutInflater.from(context)
+        mLayoutInflater = LayoutInflater.from(mContext)
         mItems = items
     }
 }
