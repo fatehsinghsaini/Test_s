@@ -50,9 +50,9 @@ class LowerBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
 
         val items: MutableList<AbstractItem> = ArrayList()
         for (i in 0..29) {
-            if (i % COLUMNS === 0 || i % COLUMNS === 4) {
+            if (i % COLUMNS == 0 || i % COLUMNS == 4) {
                 items.add(EdgeItem(i.toString()))
-            } else if (i % COLUMNS === 1 || i % COLUMNS === 3) {
+            } else if (i % COLUMNS == 1 || i % COLUMNS == 3) {
                 items.add(CenterItem(i.toString()))
             } else {
                 items.add(EmptyItem(i.toString()))
