@@ -151,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bus_tracking"
-        android:textColor="@color/textGray"
+        android:textColor="@color/white"
         android:background="@drawable/back_round_primary"
         android:paddingStart="@dimen/_6sdp"
         android:paddingEnd="@dimen/_6sdp"

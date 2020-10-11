@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:gravity="center_vertical">
+
+    <CheckBox
+        android:id="@+id/termsConditionCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ihaveReadtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/by_clicking_on_continue_booking_agree_to_the"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/termsConditionCheck"
+
+
+        />
+
+    <TextView
+        android:id="@+id/privacyPolicy"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingEnd="@dimen/_2sdp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@+id/ihaveReadtxt"
+        app:layout_constraintTop_toBottomOf="@+id/ihaveReadtxt"  />
+
+    <TextView
+        android:id="@+id/andText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingStart="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        android:text="@string/and_text"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_10sdp"
+       app:layout_constraintStart_toEndOf="@+id/privacyPolicy"
+        app:layout_constraintTop_toBottomOf="@+id/ihaveReadtxt" />
+
+    <TextView
+        android:id="@+id/termsCondition"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/terms_of_use"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/ihaveReadtxt"
+        app:layout_constraintStart_toEndOf="@+id/andText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

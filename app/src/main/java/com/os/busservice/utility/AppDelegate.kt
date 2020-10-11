@@ -548,6 +548,11 @@ object AppDelegate {
         }
     }
 
+    fun mStartActivity(context: Context,flag:Int,activity: Activity){
+        context.startActivity(Intent(context,activity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT or flag
+        ))
+    }
+
 
 }
 

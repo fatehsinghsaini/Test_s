@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="mListener"
+            type="com.os.busservice.listeners.CommonListener" />
+        <variable
+            name="mAddress"
+            type="com.os.busservice.model.address.AddressResult" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="@{ ()->  mListener.mOnItemClick(mAddress)}"
+  >
+
+    <CheckBox
+        android:id="@+id/locationImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/dropText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/locationImg"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:text="Iffco Chowk"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+
+            />
+
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:text="23:15"
+            android:textColor="@color/black"
+            android:gravity="end"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/busStandName"
+        style="@style/TextStyleNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:text="Ifcoo Chowk Main Bus stand,985858585"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/locationImg"
+        app:layout_constraintTop_toBottomOf="@+id/dropText" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/textGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/busStandName"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

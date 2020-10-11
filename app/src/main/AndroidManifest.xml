@@ -47,6 +47,8 @@
         <activity android:name=".ui.activity.BusSearchListing" />
         <activity android:name=".ui.activity.GroupDetailsActivity" />
         <activity android:name=".ui.activity.BusSeatActivity" />
+        <activity android:name=".ui.activity.PickupDropUpActivity" />
+        <activity android:name=".ui.activity.BusBookingActivity" />
     </application>
 
 </manifest>

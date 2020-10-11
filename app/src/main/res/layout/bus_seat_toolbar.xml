@@ -6,15 +6,40 @@
     android:background="@drawable/toolbar_shape"
     >
 
-    <TextView
-        android:id="@+id/bus_date"
-        style="@style/TextStyleBold"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="12 Jul-21:30 PM"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14sdp" />
+        android:background="@drawable/toolbar_shape"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/bus_date"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12 Jul-21:30 PM"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+
+    </RelativeLayout>
+
+
     <TextView
         android:id="@+id/bus_name"
         style="@style/TextStyleNormal"
@@ -44,10 +69,14 @@
         android:text="@string/non_refundable"
         android:textColor="@color/white"
         android:background="@drawable/back_round"
+        android:backgroundTint="@color/colorPrimaryLight"
         android:layout_gravity="center"
         android:layout_marginBottom="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_6sdp"
-        android:padding="@dimen/_4sdp"
+       android:paddingStart="@dimen/_7sdp"
+        android:paddingEnd="@dimen/_7sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_4sdp"
         android:textSize="@dimen/_12sdp"
         />
 

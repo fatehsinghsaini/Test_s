@@ -5,18 +5,21 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.os.busservice.R
 import com.os.busservice.databinding.BusSeatActivityBinding
+import com.os.busservice.databinding.PickUpDropupActivityBinding
+import com.os.busservice.ui.adapter.pager.PickUpDropUpPagerAdapter
 import com.os.busservice.ui.adapter.pager.SeatPagerAdapter
 import com.os.busservice.ui.baseFile.ActivityFromFragmentCallack
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.utility.AppDelegate
 import kotlinx.android.synthetic.main.bottom_bus_seat_selection.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
+import kotlinx.android.synthetic.main.pick_up_dropup_activity.*
 
-class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLayout.OnTabSelectedListener {
-    private var mBinding: BusSeatActivityBinding?=null
+class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLayout.OnTabSelectedListener {
+    private var mBinding: PickUpDropupActivityBinding?=null
 
     override fun setBinding() {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.bus_seat_activity)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.pick_up_dropup_activity)
     }
 
     override fun createActivityObject() {
@@ -27,16 +30,16 @@ class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLay
         mActivity=this
 
 
-        mBinding!!.viewPager.adapter = SeatPagerAdapter(supportFragmentManager,lifecycle)
+        mBinding!!.viewPager.adapter = PickUpDropUpPagerAdapter(supportFragmentManager,lifecycle)
         TabLayoutMediator(mBinding!!.tabLayout, mBinding!!.viewPager) { tab, position ->
             mBinding!!.viewPager.setCurrentItem(tab.position, true)
             AppDelegate.tabsStyle(tab,R.style.TextStyleNormal)
             when (position) {
                 0 -> {
-                    tab.text = getString(R.string.lower)
+                    tab.text = getString(R.string.boarding)
                     AppDelegate.tabsStyle(tab,R.style.TextStyleNormalTabsSelected)
                 }
-                else -> tab.text = getString(R.string.upper)
+                else -> tab.text = getString(R.string.dropping)
             }
 
         }.attach()
@@ -47,7 +50,8 @@ class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLay
 
     override fun setListeners() {
         back.setOnClickListener { finish() }
-        priceSubmit.setOnClickListener { AppDelegate.mStartActivity(mActivity!!,0,PickupDropUpActivity()) }
+
+
     }
 
     override fun onTabSelected(tab: TabLayout.Tab?) {

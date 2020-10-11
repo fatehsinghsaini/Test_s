@@ -139,6 +139,28 @@
     <string name="bus_tracking">Bus Tracking</string>
     <string name="lower">Lower</string>
     <string name="upper">Upper</string>
+    <string name="done">Done</string>
+    <string name="boarding">Boarding</string>
+    <string name="dropping">Dropping</string>
+    <string name="need_help_selection_boarding_points">Need help selecting a boarding point?</string>
+    <string name="set_a_landmark_street_area">Set a landmark, street or area</string>
+    <string name="process">Process</string>
+    <string name="excluding_taxes">(Excluding taxes)</string>
+    <string name="contact_information">Contact Details</string>
+    <string name="passenger_details">Passenger Details</string>
+    <string name="p_name">Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="passenger">Passenger</string>
+    <string name="by_clicking_on_continue_booking_agree_to_the">By clicking on continue Booking, I agree to all the</string>
+    <string name="and_text">and</string>
+    <string name="insure_your_travel_by_adding_money">Insure your travel by adding Rs 20 per passenger Powered by HDFC Ergo Insurance Ltd.</string>
+    <string name="loss_of_baggage">Loss of baggage</string>
+    <string name="upto_5000_insurance_cover">Upto Rs. 5000 insurance cover</string>
+    <string name="yes_secure_my_trip_with_insurance_i_have">"Yes,secure my trip with insurance. I  have read,understood and agree to the "</string>
+    <string name="terms_and_condition">Terms and Conditions</string>
 
 
 </resources>
