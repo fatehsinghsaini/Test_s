@@ -39,16 +39,34 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.OtpVerifyActivity" />
-        <activity android:name=".ui.activity.RegisterActivity" />
-        <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.DashBoardActivity" />
-        <activity android:name=".ui.activity.BusTrackingActivity" />
-        <activity android:name=".ui.activity.ForgotPwdActivity" />
-        <activity android:name=".ui.activity.BusSearchListing" />
+        <activity android:name=".ui.activity.RegisterActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.LoginActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.DashBoardActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.BusTrackingActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.ForgotPwdActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.BusSearchListing"
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity android:name=".ui.activity.GroupDetailsActivity" />
-        <activity android:name=".ui.activity.BusSeatActivity" />
-        <activity android:name=".ui.activity.PickupDropUpActivity" />
-        <activity android:name=".ui.activity.BusBookingActivity" />
+        <activity android:name=".ui.activity.BusSeatActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.PickupDropUpActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity android:name=".ui.activity.BusBookingActivity"
+            android:windowSoftInputMode="stateHidden"
+            />
     </application>
 
 </manifest>

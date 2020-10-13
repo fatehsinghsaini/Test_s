@@ -161,6 +161,16 @@
     <string name="upto_5000_insurance_cover">Upto Rs. 5000 insurance cover</string>
     <string name="yes_secure_my_trip_with_insurance_i_have">"Yes,secure my trip with insurance. I  have read,understood and agree to the "</string>
     <string name="terms_and_condition">Terms and Conditions</string>
+    <string name="loss_of_life">Loss of Life</string>
+    <string name="my_orders">My Bookings</string>
+    <string name="completed">Completed</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="look_empty_no_completed_trips_found">Look empty, no completed trips found.</string>
+    <string name="send_location">Send Location</string>
+    <string name="received_loation">Received Location</string>
+    <string name="look_empty_no_booking_trip_found">Look empty, no booking trip found.</string>
+    <string name="booking_details">Booking Details</string>
+    <string name="select_contact_number">Select Contact Number</string>
 
 
 </resources>

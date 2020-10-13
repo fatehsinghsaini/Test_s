@@ -18,25 +18,10 @@
       android:orientation="vertical"
         >
 
-        <TextView
-            android:id="@+id/toolbarNameMain"
-            style="@style/TextStyleBold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:gravity="center"
-            android:textColor="@color/textWhite"
-            android:layout_gravity="center"
-            android:textAllCaps="true"
-            android:textSize="@dimen/_20sdp"
-
-            android:visibility="visible"
-            android:background="@color/colorPrimary"
-            />
-        <include
+         <include
             android:id="@+id/toolbarMain"
             layout="@layout/main_toolbar_layout"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
 

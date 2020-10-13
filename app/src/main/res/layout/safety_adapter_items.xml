@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="mListener"
+            type="com.os.busservice.listeners.CommonListener" />
+        <variable
+            name="mAddress"
+            type="com.os.busservice.model.address.AddressResult" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{ ()->  mListener.mOnItemClick(mAddress)}"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/booking_details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:padding="@dimen/_5sdp"
+            />
+        <TextView
+            android:id="@+id/orderId"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking Id: #1251"
+            android:textSize="@dimen/_12sdp"
+
+            android:padding="@dimen/_5sdp"
+            />
+
+
+        <TextView
+            android:id="@+id/busStandName"
+            style="@style/TextStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:text="Jaipur(Rajasthan) - New Delhi"
+            />
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:text="24/04/2020"
+            />
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:text="INR 1112"
+            android:textColor="@color/colorPrimary"
+            />
+
+
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_contact_number"
+            android:gravity="center"
+            android:background="@drawable/back_round_edittxt"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
+            android:drawableEnd="@drawable/ic_arrow_down"
+
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/back_gray_otp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:backgroundTint="@color/bt_colorYellow"
+            android:layout_marginTop="@dimen/_7sdp"
+            >
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_baseline_share"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_7sdp"
+
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/textGray"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+
+    </LinearLayout>
+</layout>

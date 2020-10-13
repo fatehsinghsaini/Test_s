@@ -16,9 +16,7 @@ import com.os.busservice.databinding.ActivityDashboardBinding
 import com.os.busservice.model.CommonResponse
 import com.os.busservice.ui.baseFile.ActivityFromFragmentCallack
 import com.os.busservice.ui.baseFile.BaseBindingActivity
-import com.os.busservice.ui.fragment.GroupFragment
-import com.os.busservice.ui.fragment.HomeFragment
-import com.os.busservice.ui.fragment.MyAccountFragment
+import com.os.busservice.ui.fragment.*
 import com.os.busservice.ui.viewModel.LoginViewModel
 import com.os.busservice.utility.AppDelegate
 import com.os.busservice.utility.ProgressDialog
@@ -77,43 +75,34 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
             override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
 
                 supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-                toolbarNameMain.visibility =View.GONE
-                toolbarName.visibility =View.VISIBLE
-                back.visibility =View.VISIBLE
+                logo.visibility =View.VISIBLE
+                back.visibility =View.GONE
 
                 when (item.itemId) {
                     R.id.navigation_home -> {
-//                        toolbarName.text =getString(R.string.home)
-
+                        toolbarName.text =getString(R.string.bus_ticket)
                         changeFragment(HomeFragment(),false)
                         return true
                     }
                     R.id.navigation_order -> {
-
-//                        toolbarName.text =getString(R.string.booking)
-
-
-                        changeFragment(HomeFragment(),false)
+                        toolbarName.text =getString(R.string.my_orders)
+                        changeFragment(BookingHistoryFragment(),false)
                         return true
                     }
-                    R.id.navigation_offer -> {
-
+                    R.id.navigation_safety -> {
+                        toolbarName.text =getString(R.string.safty)
+                        changeFragment(SafetyPagerFragment(),false)
                         return true
                     }
 
                     R.id.navigation_account -> {
 
-//                        toolbarName.text =getString(R.string.my_account)
-
-
+                        toolbarName.text =getString(R.string.my_account)
                         changeFragment(MyAccountFragment(),false)
                         return true
                     }
                     R.id.navigation_group -> {
-                        toolbarMain.visibility =View.VISIBLE
-                        toolbarNameMain.visibility =View.GONE
-                        back.visibility =View.GONE
-                        toolbarName.text =getString(R.string.my_account)
+                       toolbarName.text =getString(R.string.my_account)
 
                         changeFragment(GroupFragment(),false)
                         return true

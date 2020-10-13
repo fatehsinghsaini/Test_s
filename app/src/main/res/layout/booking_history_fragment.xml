@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/emptyText"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/look_empty_no_completed_trips_found"
+            android:padding="@dimen/_10sdp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12sdp"
+            />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            >
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                android:layout_below="@+id/toolbar"
+                app:tabTextAppearance="@style/TextStyleNormalTabs"
+                app:tabSelectedTextColor="@color/white"
+
+                app:tabTextColor="@color/black"
+                app:tabIndicatorColor="@color/textLightGray"
+                app:tabIndicatorHeight="0dp"
+                app:tabBackground="@drawable/tab_color_selection"
+                app:tabMode="fixed"
+                app:tabRippleColor="@null"
+
+
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/materialCardView"
+            android:layout_above="@+id/bottomView"
+
+            />
+
+
+
+    </LinearLayout>
+</layout>

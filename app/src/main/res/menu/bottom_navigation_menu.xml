@@ -13,20 +13,22 @@
         android:title="@string/booking"
         />
     <item
-        android:id="@+id/navigation_offer"
+        android:id="@+id/navigation_safety"
         android:icon="@drawable/ic_help"
         android:title="@string/safty"
         app:showAsAction="ifRoom"
         android:visible="true"
         />
     <item
-        android:id="@+id/navigation_account"
-        android:icon="@drawable/ic_my_account"
-        android:title="@string/my_account"
-        />
-    <item
         android:id="@+id/navigation_group"
         android:icon="@drawable/ic_baseline_group_24"
         android:title="@string/group"
         />
+
+    <item
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/ic_my_account"
+        android:title="@string/my_account"
+        />
+
 </menu>

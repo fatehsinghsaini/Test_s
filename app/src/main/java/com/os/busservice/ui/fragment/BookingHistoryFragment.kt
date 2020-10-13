@@ -1,25 +1,30 @@
-package com.os.busservice.ui.activity
+package com.os.busservice.ui.fragment
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
+import bolts.Task.cancelled
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.os.busservice.R
-import com.os.busservice.databinding.BusSeatActivityBinding
+import com.os.busservice.databinding.BookingHistoryFragmentBinding
 import com.os.busservice.databinding.PickUpDropupActivityBinding
-import com.os.busservice.ui.adapter.pager.PickUpDropUpPagerAdapter
-import com.os.busservice.ui.adapter.pager.SeatPagerAdapter
+import com.os.busservice.ui.activity.DashBoardActivity
+import com.os.busservice.ui.adapter.pager.OrderHistoryPagerAdapter
 import com.os.busservice.ui.baseFile.ActivityFromFragmentCallack
-import com.os.busservice.ui.baseFile.BaseBindingActivity
+import com.os.busservice.ui.baseFile.BaseFragment
 import com.os.busservice.utility.AppDelegate
-import kotlinx.android.synthetic.main.bottom_bus_seat_selection.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
-import kotlinx.android.synthetic.main.pick_up_dropup_activity.*
 
-class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLayout.OnTabSelectedListener {
-    private var mBinding: PickUpDropupActivityBinding?=null
+class BookingHistoryFragment :BaseFragment<DashBoardActivity>(), ActivityFromFragmentCallack,TabLayout.OnTabSelectedListener {
+    private var mBinding: BookingHistoryFragmentBinding?=null
 
-    override fun setBinding() {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.pick_up_dropup_activity)
+
+    override fun setBinding(inflater: LayoutInflater, container: ViewGroup?): ViewDataBinding {
+        mBinding = DataBindingUtil.inflate(inflater,R.layout.booking_history_fragment,container,false)
+        return mBinding!!
     }
 
     override fun createActivityObject() {
@@ -27,20 +32,20 @@ class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,T
     }
 
     override fun initializeObject() {
-        mActivity=this
-        toolbarName.text ="Jaipur to Kota"
+        mActivity=activity
+      /*  toolbarName.text ="Jaipur to Kota"*/
 
 
-        mBinding!!.viewPager.adapter = PickUpDropUpPagerAdapter(supportFragmentManager,lifecycle)
+        mBinding!!.viewPager.adapter = OrderHistoryPagerAdapter(activity!!.supportFragmentManager,lifecycle)
         TabLayoutMediator(mBinding!!.tabLayout, mBinding!!.viewPager) { tab, position ->
             mBinding!!.viewPager.setCurrentItem(tab.position, true)
             AppDelegate.tabsStyle(tab,R.style.TextStyleNormal)
             when (position) {
                 0 -> {
-                    tab.text = getString(R.string.boarding)
+                    tab.text = getString(R.string.completed)
                     AppDelegate.tabsStyle(tab,R.style.TextStyleNormalTabsSelected)
                 }
-                else -> tab.text = getString(R.string.dropping)
+                else -> tab.text = getString(R.string.cancelled)
             }
 
         }.attach()
@@ -50,7 +55,7 @@ class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,T
     }
 
     override fun setListeners() {
-        back.setOnClickListener { finish() }
+
 
 
     }
@@ -65,6 +70,15 @@ class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,T
     }
 
     override fun onTabReselected(tab: TabLayout.Tab?) {
+    }
+
+
+    override fun changeFragment(fragment: Fragment, isAddToBackStack: Boolean) {
+
+    }
+
+    override fun changeToolbarTitle(title: String) {
+
     }
 
 }

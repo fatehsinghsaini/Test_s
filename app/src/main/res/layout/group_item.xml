@@ -21,9 +21,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
-            android:src="@mipmap/ic_logo"
+            android:layout_width="@dimen/_58sdp"
+            android:layout_height="@dimen/_58sdp"
+            android:src="@mipmap/dummy_img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,19 +51,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="School Bus Group"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                />
 
             <TextView
                 style="@style/TextStyleNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="School Bus Group" />
+                android:text="12 Members" />
 
             <TextView
                 style="@style/TextStyleNormal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="School Bus Group" />
+                android:text="Jhunjhunu,Rajathan" />
 
         </LinearLayout>
 
