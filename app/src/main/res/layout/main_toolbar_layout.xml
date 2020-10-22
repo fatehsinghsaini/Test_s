@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:padding="@dimen/_10sdp"
             android:src="@drawable/ic_baseline_keyboard_backspace_24"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
         <TextView

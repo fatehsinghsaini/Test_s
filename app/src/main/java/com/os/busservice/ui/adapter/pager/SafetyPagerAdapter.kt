@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.os.busservice.ui.fragment.OrderFragment
 import com.os.busservice.ui.fragment.PickupDropUpFragment
 import com.os.busservice.ui.fragment.SafetyFragment
+import com.os.busservice.ui.fragment.SafetyReceiveLocationFragment
 
 class SafetyPagerAdapter(
     fragmentManager: FragmentManager,
@@ -16,7 +17,7 @@ class SafetyPagerAdapter(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 ->    SafetyFragment.newInstance("")
-            else -> SafetyFragment.newInstance("")
+            else -> SafetyReceiveLocationFragment.newInstance("")
         }
     }
 

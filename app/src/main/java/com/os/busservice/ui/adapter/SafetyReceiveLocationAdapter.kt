@@ -10,20 +10,18 @@ import com.os.busservice.model.address.AddressResult
 import com.os.busservice.ui.adapter.RecyclerBaseAdapter
 
 
-class SafetyAdapter(var mCartListener: SafetyListener) : RecyclerBaseAdapter() {
+class SafetyReceiveLocationAdapter(var mCartListener: SafetyListener) : RecyclerBaseAdapter() {
 
     var mList = ArrayList<String>()
     var mPos = 0
 
-    override fun getLayoutIdForPosition(position: Int) = R.layout.safety_adapter_items
+    override fun getLayoutIdForPosition(position: Int) = R.layout.safety_receive_location_item
 
     override fun putViewDataBinding(binding: ViewDataBinding) {
-        if (binding is SafetyAdapterItemsBinding) {
+        if (binding is SafetyReceiveLocationItemBinding) {
             binding.mListener =mCartListener
 
-            binding.contactInfo.setOnClickListener {
-                mCartListener.mContactListing(binding.contactInfo)
-            }
+
 
 //            val item = mList[mPos]
 //            binding.mItem = item

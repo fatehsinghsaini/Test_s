@@ -171,6 +171,8 @@
     <string name="look_empty_no_booking_trip_found">Look empty, no booking trip found.</string>
     <string name="booking_details">Booking Details</string>
     <string name="select_contact_number">Select Contact Number</string>
+    <string name="join">Join</string>
+    <string name="location">Location</string>
 
 
 </resources>

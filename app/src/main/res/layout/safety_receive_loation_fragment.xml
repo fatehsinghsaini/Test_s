@@ -5,7 +5,7 @@
     <data>
         <variable
             name="mAdapter"
-            type="com.os.busservice.ui.adapter.SafetyAdapter" />
+            type="com.os.busservice.ui.adapter.SafetyReceiveLocationAdapter" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,7 +20,7 @@
             android:adapter="@{mAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="4"
-            tools:listitem="@layout/safety_adapter_items" />
+            tools:listitem="@layout/safety_receive_location_item" />
 
     </LinearLayout>
 </layout>
