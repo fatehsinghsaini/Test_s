@@ -1,5 +1,6 @@
 package com.os.busservice.ui.viewModel
 
+import android.content.Intent
 import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,10 +12,15 @@ import com.os.busservice.data.retro.RestApiFactory
 import com.os.busservice.model.CommonResponse
 import com.os.busservice.model.RequestModel
 import com.os.busservice.model.SocialModel
+import com.os.busservice.model.loginResponse.LoginResponse
+import com.os.busservice.model.loginResponse.LoginResult
+import com.os.busservice.ui.activity.RegisterActivity
 import com.os.busservice.utility.AppDelegate
 import com.os.busservice.utility.Tags
+import io.reactivex.android.schedulers.AndroidSchedulers
 
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 
 class LoginViewModel : ViewModel() {
 
@@ -34,13 +40,13 @@ class LoginViewModel : ViewModel() {
     var pwdShowingFlag = MutableLiveData<Boolean>()
 
     var error = MutableLiveData<String>()
-//    var addResponseLiveData = MutableLiveData<ApiResponse<LoginResponse>>()
+    var loginLiveData = MutableLiveData<ApiResponse<LoginResponse>>()
+    var otpLiveData = MutableLiveData<ApiResponse<LoginResponse>>()
     var commonLiveData = MutableLiveData<ApiResponse<CommonResponse>>()
     var logoutLiveData = MutableLiveData<ApiResponse<CommonResponse>>()
-//    var otpLiveData = MutableLiveData<ApiResponse<LoginResponse>>()
 
     private var restApiFactory: RestApiFactory? = null
-//    var apiResponse: ApiResponse<LoginResponse>? = null
+    var apiResponse: ApiResponse<LoginResponse>? = null
     var commonApiResponse: ApiResponse<CommonResponse>? = null
 
     private var subscription: Disposable? = null
@@ -49,7 +55,7 @@ class LoginViewModel : ViewModel() {
     init {
         restApiFactory = RestApiFactory
         userDataSource = UserDataSource(restApiFactory!!.create())
-//        apiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
+        apiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
         commonApiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
     }
 
@@ -167,33 +173,32 @@ class LoginViewModel : ViewModel() {
         else
             request.referred_by = referral_by.value.toString().trim()
 
-    /*    subscription = userDataSource!!.socialLogin(request)
+        subscription = userDataSource!!.socialLogin(request)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { d ->
-                addResponseLiveData.postValue(apiResponse!!.loading())
+                loginLiveData.postValue(apiResponse!!.loading())
             }
             .subscribe(
                 { result ->
                     if(result.accountNotExist=="1")
                     {
-                        val loginResult =LoginResult()
-                        loginResult.email =emial.value
+                        result.result?.email =emial.value
                         if(firstName.value!=null)
-                        loginResult.first_name = firstName.value
+                            result.result?.first_name = firstName.value
                         if(lastName.value!=null)
-                        loginResult.last_name = lastName.value
+                            result.result?.last_name = lastName.value
                         val ctx=App.singleton
-                        ctx?.startActivity(Intent(ctx,RegisterActivity::class.java).putExtra(Tags.DATA,loginResult).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(Tags.LOGIN,socialModel))
+                        ctx?.startActivity(Intent(ctx, RegisterActivity::class.java).putExtra(Tags.DATA,result.result).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(Tags.LOGIN,socialModel))
                     }
 
 
-                    addResponseLiveData.postValue(apiResponse!!.success(result))
+                    loginLiveData.postValue(apiResponse!!.success(result))
                 },
                 { throwable ->
-                    addResponseLiveData.postValue(apiResponse!!.error(throwable))
+                    loginLiveData.postValue(apiResponse!!.error(throwable))
                 }
-            )*/
+            )
 
     }
 
@@ -215,30 +220,30 @@ class LoginViewModel : ViewModel() {
         request.device_type = Tags.android
         request.language = "en"
 
-     /*   subscription = userDataSource!!.login(request)
+        subscription = userDataSource!!.mLogin(request)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { d ->
-                addResponseLiveData.postValue(apiResponse!!.loading())
+                loginLiveData.postValue(apiResponse!!.loading())
             }
             .subscribe(
                 { result ->
-                    addResponseLiveData.postValue(apiResponse!!.success(result))
+                    loginLiveData.postValue(apiResponse!!.success(result))
                 },
                 { throwable ->
-                    addResponseLiveData.postValue(apiResponse!!.error(throwable))
+                    loginLiveData.postValue(apiResponse!!.error(throwable))
                 }
-            )*/
+            )
     }
 
-/*    fun registerApi(deviceToken: String?, result: LoginResult?) {
+    fun registerApi(deviceToken: String?, result: LoginResult?) {
         val request = RequestModel()
         request.firstName = result?.first_name
         request.lastName = result?.last_name
         request.mobile = result?.mobile
         request.country_code = result?.country_code
         request.email = result?.email
-        request.password = result?.pwd
+        request.password = result?.password
         request.device_type = Tags.android
         request.language = "en"
         request.device_token = deviceToken
@@ -251,29 +256,29 @@ class LoginViewModel : ViewModel() {
         else
             request.referred_by = referral_by.value.toString().trim()
 
-        subscription = userDataSource!!.register(request)
+        subscription = userDataSource!!.mSignUp(request)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { d ->
-                addResponseLiveData.postValue(apiResponse!!.loading())
+                loginLiveData.postValue(apiResponse!!.loading())
             }
             .subscribe(
                 { result ->
-                    addResponseLiveData.postValue(apiResponse!!.success(result))
+                    loginLiveData.postValue(apiResponse!!.success(result))
                 },
                 { throwable ->
-                    addResponseLiveData.postValue(apiResponse!!.error(throwable))
+                    loginLiveData.postValue(apiResponse!!.error(throwable))
                 }
             )
 
-    }*/
+    }
 
 
     fun mSendOtp(registerFlag: String) {
         if (registerFlag==Tags.REGISTER && !isValidUserData())
             return
 
-      /* val mCountryCode= countryCode.value
+       val mCountryCode= countryCode.value
         mCountryCode?.replace("+","")
 
         val request = RequestModel()
@@ -281,7 +286,7 @@ class LoginViewModel : ViewModel() {
         request.mobile = mobileNo.value
         request.language = "en"
 
-        subscription = userDataSource!!.resendOtp(request)
+        subscription = userDataSource!!.mSendOtp(request)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {
@@ -291,7 +296,7 @@ class LoginViewModel : ViewModel() {
             }, { throwable: Throwable? ->
                 otpLiveData.postValue(apiResponse!!.error(throwable!!))
             }
-            )*/
+            )
     }
 
     fun forgotPwd() {
@@ -304,7 +309,7 @@ class LoginViewModel : ViewModel() {
             return
         }
 
-   /*     val request = RequestModel()
+        val request = RequestModel()
         request.email = emial.value
         request.language = "en"
 
@@ -318,14 +323,14 @@ class LoginViewModel : ViewModel() {
             }, { throwable: Throwable? ->
                 commonLiveData.postValue(commonApiResponse!!.error(throwable!!))
             }
-            )*/
+            )
     }
 
     fun changePwd(mUserId:String?) {
         if(!isValidUserDataCP())
             return
 
-/*        val request = RequestModel()
+        val request = RequestModel()
         request.oldPassword = mOldPassword.value
         request.newPassword = confirmPwd.value
         request.userId = mUserId
@@ -341,7 +346,7 @@ class LoginViewModel : ViewModel() {
             }, { throwable: Throwable? ->
                 commonLiveData.postValue(commonApiResponse!!.error(throwable!!))
             }
-            )*/
+            )
     }
 
     fun logoutApi( userId: String?) {

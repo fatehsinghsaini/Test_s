@@ -6,13 +6,17 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
 import com.os.busservice.R
+import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.ActivityRegisterBinding
+import com.os.busservice.model.loginResponse.LoginResponse
+import com.os.busservice.model.loginResponse.LoginResult
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.LoginViewModel
 import com.os.busservice.utility.AppDelegate
+import com.os.busservice.utility.ProgressDialog
 import com.os.busservice.utility.Tags
+import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.fb_google_layout.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
@@ -38,16 +42,15 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
 
         toolbarName.text = getString(R.string.sign_up)
 
-
         if (intent.hasExtra(Tags.DATA)) {
             mViewModel?.pwdShowingFlag!!.value = false
             userItems = intent.getParcelableExtra(Tags.DATA)
             binding?.showPassword = false
 
-          /*  mViewModel!!.firstName.value = userItems?.first_name
+            mViewModel!!.firstName.value = userItems?.first_name
             mViewModel!!.lastName.value = userItems?.last_name
             mViewModel!!.mobileNo.value = userItems?.mobile
-            mViewModel!!.emial.value = userItems?.email*/
+            mViewModel!!.emial.value = userItems?.email
 
             if(intent.hasExtra(Tags.LOGIN))
                 socialModel =intent.getParcelableExtra(Tags.LOGIN)
@@ -63,13 +66,13 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
             AppDelegate.showToast(this, it)
         })
 
-   /*     mViewModel!!.otpLiveData.observe(this, Observer {
+        mViewModel!!.otpLiveData.observe(this, Observer {
             handleGenerateOtpApi(it)
         })
 
-        mViewModel!!.addResponseLiveData.observe(this, Observer {
+        mViewModel!!.otpLiveData.observe(this, Observer {
             handleLoginApi(it)
-        })*/
+        })
 
 
     }
@@ -100,7 +103,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                 finish()
             }
             R.id.fbLayout -> faceBookLogin(Tags.REGISTER)
-          /*  R.id.googleLayout -> googlePlusLogin(Tags.REGISTER)*/
+            R.id.googleLayout -> googlePlusLogin(Tags.REGISTER)
             R.id.privacyPolicy -> mCallStaticPage(
                 getString(R.string.privacy_policy),
                 Tags.PRIVACY_POLICY
@@ -123,7 +126,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
         )
     }
 
- /*   private fun handleGenerateOtpApi(result: ApiResponse<LoginResponse>?) {
+    private fun handleGenerateOtpApi(result: ApiResponse<LoginResponse>?) {
         when (result!!.status) {
             ApiResponse.Status.ERROR -> {
                 ProgressDialog.hideProgressDialog()
@@ -137,18 +140,18 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                     UtilityMethods.showToastMessage(mActivity!!, result.data.msg)
                     val userItem = result.data.result
 
-                    userItem.first_name = mViewModel?.firstName?.value
-                    userItem.last_name = mViewModel?.lastName?.value
-                    userItem.email = mViewModel?.emial?.value
-                    userItem.mobile = mViewModel?.mobileNo?.value
-                    userItem.country_code = mViewModel?.countryCode?.value
-                    userItem.pwd = mViewModel?.password?.value
+                    userItem?.first_name = mViewModel?.firstName?.value
+                    userItem?.last_name = mViewModel?.lastName?.value
+                    userItem?.email = mViewModel?.emial?.value.toString()
+                    userItem?.mobile = mViewModel?.mobileNo?.value
+                    userItem?.country_code = mViewModel?.countryCode?.value.toString()
+                    userItem?.password = mViewModel?.password?.value
 
                     if (socialModel != null) {
                         if (socialModel?.loginType == Tags.facebook)
-                            userItem.fb_id = socialModel?.socialId
+                            userItem?.fb_id = socialModel?.socialId
                         else
-                            userItem.google_id = socialModel?.socialId
+                            userItem?.google_id = socialModel?.socialId
                     }
 
                     startActivity(
@@ -167,7 +170,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                     UtilityMethods.showToastMessage(mActivity!!, result.data.msg)
             }
         }
-    }*/
+    }
 
 
     override fun onDestroy() {
@@ -175,7 +178,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
         LoginManager.getInstance().logOut()
     }
 
-   /* private fun handleLoginApi(result: ApiResponse<LoginResponse>?) {
+    private fun handleLoginApi(result: ApiResponse<LoginResponse>?) {
         when (result!!.status) {
             ApiResponse.Status.ERROR -> {
                 ProgressDialog.hideProgressDialog()
@@ -204,7 +207,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                 }
             }
         }
-    }*/
+    }
 
 
 }

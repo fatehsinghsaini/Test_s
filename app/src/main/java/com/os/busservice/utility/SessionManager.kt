@@ -7,11 +7,12 @@ import androidx.databinding.Bindable
 import com.facebook.appevents.UserDataStore.FIRST_NAME
 import com.google.gson.Gson
 import com.os.busservice.R
+import com.os.busservice.model.loginResponse.LoginResult
 
 
 class SessionManager : BaseObservable() {
 
-/*    @get:Bindable("data")
+    @get:Bindable("data")
     var loginResult: LoginResult?
         get() =Gson().fromJson(shared!!.getString(Tags.DATA, ""),LoginResult::class.java)
         set(result){
@@ -26,7 +27,7 @@ class SessionManager : BaseObservable() {
             editor!!.commit()
 //            notifyPropertyChanged(BR.loginResult)
 
-        }*/
+        }
 
     @get:Bindable("fullName")
     var fullName: String?
