@@ -1,18 +1,36 @@
 package com.os.busservice.data.retro
 
-import androidx.databinding.Observable
+import com.os.busservice.model.CommonResponse
+import com.os.busservice.model.RequestModel
+import com.os.busservice.model.loginResponse.LoginResponse
+import io.reactivex.Observable
 import retrofit2.http.Body
-import retrofit2.http.Multipart
 import retrofit2.http.POST
-import retrofit2.http.Part
+
 
 interface RestApi {
 
- /*   @POST("login")
+    @POST("login")
     fun login(@Body loginRequest: RequestModel): Observable<LoginResponse>
 
-    @Multipart
+    @POST("signup")
+    fun mSignup(@Body loginRequest: RequestModel): Observable<LoginResponse>
+
+    @POST("generat_otp")
+    fun mSendOtp(@Body loginRequest: RequestModel): Observable<LoginResponse>
+
+    @POST("facebook_login")
+    fun mFacebokLogin(@Body loginRequest: RequestModel): Observable<LoginResponse>
+    @POST("google_login")
+    fun mGoogleLogin(@Body loginRequest: RequestModel): Observable<LoginResponse>
+
+    @POST("generat_otp")
+    fun mForgotPassword(@Body loginRequest: RequestModel): Observable<CommonResponse>
+
+    @POST("generat_otp")
+    fun mChangePassword(@Body loginRequest: RequestModel): Observable<CommonResponse>
+
+   /* @Multipart
     @POST("update-profile")
-    fun mUpdateProfile(@Part("data") loginRequest: okhttp3.RequestBody?, @Part mImage:MultipartBody.Part?): Observable<UpdateProfileResponse>
-*/
+    fun mUpdateProfile(@Part("data") loginRequest: okhttp3.RequestBody?, @Part mImage:MultipartBody.Part?): Observable<UpdateProfileResponse>*/
 }

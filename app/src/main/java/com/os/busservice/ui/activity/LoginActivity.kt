@@ -19,6 +19,7 @@ import com.facebook.login.LoginManager
 import com.os.busservice.R
 import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.ActivityLoginBinding
+import com.os.busservice.model.loginResponse.LoginResponse
 import com.os.busservice.services.LocationUpdatesService
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.LoginViewModel
@@ -60,9 +61,9 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
             UtilityMethods.showToastMessage(mActivity!!, it)
         })
 
-       /* mViewModel!!.addResponseLiveData.observe(this, Observer {
+        mViewModel!!.loginLiveData.observe(this, Observer {
             handleLoginApi(it)
-        })*/
+        })
 
         toolbarName.text = getString(R.string.sign_in)
 
@@ -144,7 +145,6 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
         }
 
     }
-/*
 
     private fun handleLoginApi(result: ApiResponse<LoginResponse>?) {
         when (result!!.status) {
@@ -176,7 +176,6 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
             }
         }
     }
-*/
 
 
     override fun onDestroy() {

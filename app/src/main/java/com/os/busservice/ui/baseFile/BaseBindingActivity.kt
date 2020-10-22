@@ -151,11 +151,7 @@ abstract class BaseBindingActivity : AppCompatActivity(){
                                 socialModel?.socialId,
                                 "", socialModel
                             )
-                            //  }
-                            /* else {
-                                mLoginViewModel?.emial?.value = socialModel?.email_address
-                                mLoginViewModel?.firstName?.value ="${socialModel?.first_name} ${socialModel?.last_name}"
-                            }*/
+
                         }
                     }
                     val parameters = Bundle()
