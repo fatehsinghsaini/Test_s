@@ -14,8 +14,7 @@ import java.util.concurrent.TimeUnit
 
 object RestApiFactory {
 
-     val socketUrl ="http://14.98.110.245:5381/"
-     val BASE_URL = "http://14.98.110.245:5381/"
+     val BASE_URL = "http://mydevworks.com/bus/public/api/"
       private val URL = "$BASE_URL"
 
     fun create(): RestApi {

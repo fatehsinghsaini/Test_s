@@ -99,8 +99,6 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                 mViewModel!!.countryCode.value = ccp.selectedCountryCode
                 mViewModel!!.mSendOtp(Tags.REGISTER)
 
-                startActivity(Intent(this, OtpVerifyActivity::class.java))
-                finish()
             }
             R.id.fbLayout -> faceBookLogin(Tags.REGISTER)
             R.id.googleLayout -> googlePlusLogin(Tags.REGISTER)

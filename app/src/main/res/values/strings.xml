@@ -9,6 +9,9 @@
     <string name="facebook_app_id">2352293971732550</string>
     <string name="fb_login_protocol_scheme">fb2352293971732550</string>
 
+    <string name="google_map_key">AIzaSyBKqM0VfkbS_NwJEZPevTeipCWP35tQ2yo</string>
+
+
     <string name="default_notification_channel_id">71717</string>
     <string name="default_notification_channel_name">bringIt</string>
     <string name="error_network_connection">You are not connected with an active internet connection.</string>
