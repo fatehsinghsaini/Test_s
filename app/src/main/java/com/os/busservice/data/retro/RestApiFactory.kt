@@ -28,7 +28,7 @@ object RestApiFactory {
             val request = chain.request().newBuilder().addHeader(
                 "X-Access-Token",
                 sessionManager.mGetValue(Tags.token)!!
-            ).build()
+            ).addHeader("language","en").build()
             chain.proceed(request)
         }.addInterceptor(interceptor)
         httpClient.connectTimeout(120, TimeUnit.SECONDS).readTimeout(120, TimeUnit.SECONDS)

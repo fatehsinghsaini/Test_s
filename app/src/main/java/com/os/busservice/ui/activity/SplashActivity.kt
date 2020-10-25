@@ -7,6 +7,8 @@ import android.util.Base64
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 import com.os.busservice.MainActivity
 import com.os.busservice.R
 import com.os.busservice.utility.SessionManager
@@ -28,6 +30,14 @@ class SplashActivity :AppCompatActivity() {
     private fun initView() {
         val mSessionManager = SessionManager.getInstance(this)
         FirebaseApp.initializeApp(this)
+
+        //get firebasetoken
+
+       FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
+          val token= it.token
+           mSessionManager?.mFCMToken =token
+       }
+
         keyHashGen()
         GlobalScope.launch(Dispatchers.Main) {
             delay(3000)
@@ -48,7 +58,7 @@ class SplashActivity :AppCompatActivity() {
         // Add code to print out the key hash
         try {
             val info = packageManager.getPackageInfo(
-                "com.os.shiop",
+                "com.os.busservice",
                 PackageManager.GET_SIGNATURES
             )
             for (signature in info.signatures) {

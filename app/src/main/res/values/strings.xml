@@ -6,8 +6,8 @@
         <item>@string/pick_gallery</item>
     </string-array>
 
-    <string name="facebook_app_id">2352293971732550</string>
-    <string name="fb_login_protocol_scheme">fb2352293971732550</string>
+    <string name="facebook_app_id">1103351023414522</string>
+    <string name="fb_login_protocol_scheme">fb1103351023414522</string>
 
     <string name="google_map_key">AIzaSyBKqM0VfkbS_NwJEZPevTeipCWP35tQ2yo</string>
 

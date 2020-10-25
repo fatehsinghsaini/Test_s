@@ -70,7 +70,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
             handleGenerateOtpApi(it)
         })
 
-        mViewModel!!.otpLiveData.observe(this, Observer {
+        mViewModel!!.loginLiveData.observe(this, Observer {
             handleLoginApi(it)
         })
 

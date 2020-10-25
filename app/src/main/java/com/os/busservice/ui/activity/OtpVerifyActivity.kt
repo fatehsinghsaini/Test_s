@@ -6,10 +6,11 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.facebook.login.LoginResult
 import com.os.busservice.R
 import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.ActivityVerifyOtpBinding
+import com.os.busservice.model.loginResponse.LoginResponse
+import com.os.busservice.model.loginResponse.LoginResult
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.LoginViewModel
 import com.os.busservice.utility.AppDelegate
@@ -53,24 +54,24 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
         txt_label3.visibility =View.GONE
         setTimerForOTP()
 
-        /*if (intent.hasExtra(Tags.DATA)) {
+        if (intent.hasExtra(Tags.DATA)) {
             userItems = intent.getParcelableExtra(Tags.DATA)
             oTP = userItems?.otp!!
             autoOtpFill(oTP)
         }
 
         mViewModel?.mobileNo?.value = userItems?.mobile
-        mViewModel?.countryCode?.value = userItems?.country_code*/
+        mViewModel?.countryCode?.value = userItems?.country_code
 
         mViewModel?.error?.observe(this, Observer {
             UtilityMethods.showToastMessage(mActivity!!, it)
         })
-    /*    mViewModel!!.addResponseLiveData.observe(this, Observer {
+        mViewModel!!.loginLiveData.observe(this, Observer {
             apiResponse(it, Tags.REGISTER)
         })
         mViewModel!!.otpLiveData.observe(this, Observer {
             apiResponse(it, "")
-        })*/
+        })
 
     }
 
@@ -83,15 +84,14 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btn_verifyotp -> {
-                startActivity(Intent(this,DashBoardActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
-                return
+
                 if (otp_tv_otp_1.text.toString()
                         .isNotEmpty() && otp_tv_otp_1.text.toString().length == 6
                 ) {
                     val getOtp = otp_tv_otp_1.text.toString()
                     if (getOtp == oTP)
                     {
-//                        mViewModel?.registerApi(sessionManager?.mFCMToken, userItems)
+                        mViewModel?.registerApi(sessionManager?.mFCMToken, userItems)
                     }
                     else
                         AppDelegate.showToast(this, getString(R.string.invalid_otp))
@@ -105,7 +105,6 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
         }
     }
 
-/*
     private fun apiResponse(
         result: ApiResponse<LoginResponse>?,
         registerFlag: String
@@ -140,7 +139,6 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
             }
         }
     }
-*/
 
 
     private fun setTimerForOTP() {
