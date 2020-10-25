@@ -138,6 +138,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                     UtilityMethods.showToastMessage(mActivity!!, result.data.msg)
                     val userItem = result.data.result
 
+                    userItem?.otp = result.data.otp
                     userItem?.first_name = mViewModel?.firstName?.value
                     userItem?.last_name = mViewModel?.lastName?.value
                     userItem?.email = mViewModel?.emial?.value.toString()

@@ -5,5 +5,6 @@ data class LoginResponse(
     val result: LoginResult?,
     val success: Boolean,
     val token: String?,
+    val otp: String?,
     val accountNotExist: String?
 )

@@ -23,6 +23,6 @@ data class LoginResult(
     val token: String?,
     val twitter_id: String?,
     val unique_id: Int?,
-    val otp: String?,
+    var otp: String?,
     val user_image: String?
 ):Parcelable
