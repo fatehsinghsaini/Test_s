@@ -181,15 +181,18 @@ class LoginViewModel : ViewModel() {
             }
             .subscribe(
                 { result ->
-                    if(result.accountNotExist=="1")
+                    if(!result.accountNotExist!!)
                     {
-                        result.result?.email =emial.value
+                        val data=LoginResult("","","","", ""
+                            ,"","","","","","","","",
+                            "","","","",0,"","")
+                        data.email =emial.value
                         if(firstName.value!=null)
-                            result.result?.first_name = firstName.value
+                            data.first_name = firstName.value
                         if(lastName.value!=null)
-                            result.result?.last_name = lastName.value
+                            data.last_name = lastName.value
                         val ctx=App.singleton
-                        ctx?.startActivity(Intent(ctx, RegisterActivity::class.java).putExtra(Tags.DATA,result.result).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(Tags.LOGIN,socialModel))
+                        ctx?.startActivity(Intent(ctx, RegisterActivity::class.java).putExtra(Tags.DATA,data).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(Tags.LOGIN,socialModel))
                     }
 
 

@@ -136,21 +136,23 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                 ProgressDialog.hideProgressDialog()
                 if (result.data!!.success) {
                     UtilityMethods.showToastMessage(mActivity!!, result.data.msg)
-                    val userItem = result.data.result
+                    val userItem = LoginResult("","","","", ""
+                        ,"","","","","","","","",
+                        "","","","",0,"","")
 
-                    userItem?.otp = result.data.otp
-                    userItem?.first_name = mViewModel?.firstName?.value
-                    userItem?.last_name = mViewModel?.lastName?.value
-                    userItem?.email = mViewModel?.emial?.value.toString()
-                    userItem?.mobile = mViewModel?.mobileNo?.value
-                    userItem?.country_code = mViewModel?.countryCode?.value.toString()
-                    userItem?.password = mViewModel?.password?.value
+                    userItem.otp = result.data.otp
+                    userItem.first_name = mViewModel?.firstName?.value
+                    userItem.last_name = mViewModel?.lastName?.value
+                    userItem.email = mViewModel?.emial?.value.toString()
+                    userItem.mobile = mViewModel?.mobileNo?.value
+                    userItem.country_code = mViewModel?.countryCode?.value.toString()
+                    userItem.password = mViewModel?.password?.value
 
                     if (socialModel != null) {
                         if (socialModel?.loginType == Tags.facebook)
-                            userItem?.fb_id = socialModel?.socialId
+                            userItem.fb_id = socialModel?.socialId
                         else
-                            userItem?.google_id = socialModel?.socialId
+                            userItem.google_id = socialModel?.socialId
                     }
 
                     startActivity(

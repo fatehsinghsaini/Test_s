@@ -47,7 +47,8 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
 
     override fun initializeObject() {
         mActivity = this
-
+        logo.visibility =View.VISIBLE
+        back.visibility =View.GONE
         if (intent.hasExtra(Tags.DATA)) {
             when (intent.getStringExtra(Tags.DATA)) {
                 Tags.ORDERS -> {

@@ -55,9 +55,13 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
     override fun onClick(p0: View?) {
 
         if (p0 == null) {
-           /* mLoginViewModel?.logoutApi(
+          /*  mLoginViewModel?.logoutApi(
                 sessionManager?.loginResult?.id
             )*/
+
+            sessionManager?.mLogout()
+            startActivity(Intent(mActivity, LoginActivity::class.java))
+            activity?.finish()
             return
         }
 

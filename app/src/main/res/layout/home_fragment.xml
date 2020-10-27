@@ -68,6 +68,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableStart="@drawable/ic_bus"
+                                android:drawableLeft="@drawable/ic_bus"
                                 android:drawablePadding="@dimen/_6sdp"
                                 android:imeOptions="actionNext"
                                 android:inputType="textCapSentences"
@@ -89,8 +90,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableStart="@drawable/ic_bus"
+                                android:drawableLeft="@drawable/ic_bus"
                                 android:drawablePadding="@dimen/_6sdp"
-                                android:imeOptions="actionNext"
+                                android:imeOptions="actionDone"
                                 android:inputType="textCapSentences"
                                 android:padding="@dimen/_10sdp" />
 
