@@ -176,6 +176,24 @@
     <string name="select_contact_number">Select Contact Number</string>
     <string name="join">Join</string>
     <string name="location">Location</string>
+    <string name="tell_your_friends_about_zoom">Tell your friends about Rajway</string>
+    <string name="available_referral_discounts">Available referral discounts:</string>
+    <string name="your_successful_referrals">Your successful referrals:</string>
+    <string name="invite_text_msg">Invite your friends to zoom using your code and you both get discount on next orders.</string>
+    <string name="referal_code">Enter referral code</string>
+    <string name="share_your_invite_code">Share</string>
+    <string name="referal_discount">Referral Discount</string>
+    <string name="share_referal_code">Share Referral Code</string>
+
+    <string name="congratulations">Congratulations</string>
+
+    <string name="coupon_code">Referral Code</string>
+    <string name="tap_to_copy">Tap to copy</string>
+    <string name="copied_text">Copied Text</string>
+    <string name="text_copy_successfully">Refer code copy successfully</string>
+    <string name="you_have_got">You\'ve got</string>
+    <string name="share_coupon_code">Share Referral Code</string>
+
 
 
 </resources>

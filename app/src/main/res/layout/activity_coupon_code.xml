@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/main_toolbar_layout"/>
+    <TextView
+        style="@style/TextStyleBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/congratulations"
+        android:textSize="@dimen/_20sdp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="@dimen/_30sdp"
+        />
+
+    <TextView
+        style="@style/TextStyleBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/you_have_got"
+        android:textSize="@dimen/_17sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        />
+    <TextView
+        style="@style/TextStyleBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/coupon_code"
+        android:textSize="@dimen/_17sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_3sdp"
+        />
+
+    <LinearLayout
+        android:id="@+id/copyTextLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/doted_back"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:paddingStart="@dimen/_13sdp"
+        android:paddingEnd="@dimen/_13sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_4sdp"
+
+        >
+
+        <TextView
+            style="@style/TextStyleNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_to_copy"
+            android:textSize="@dimen/_11sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+
+            />
+
+        <TextView
+            android:id="@+id/couponCode"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/TextStyleNormal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/share_coupon_code"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:id="@+id/llShare"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@drawable/circle_share"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_share"
+            app:tint="@color/white"
+            />
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:textSize="@dimen/_15sdp"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

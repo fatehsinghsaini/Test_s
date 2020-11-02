@@ -68,6 +68,7 @@
         <activity android:name=".ui.activity.BusBookingActivity"
             android:windowSoftInputMode="stateHidden"
             />
+        <activity android:name=".ui.activity.EditProfileActivity" />
     </application>
 
 </manifest>
