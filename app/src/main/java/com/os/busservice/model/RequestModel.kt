@@ -14,8 +14,19 @@ package com.os.busservice.model
     var fb_id: String?=null
     var google_id: String?=null
     var device_token: String?=null
-    var userId: String?=null
+    var user_id: String?=null
     var notificationId: String?=null
     var oldPassword: String?=null
     var newPassword: String?=null
+    val end_date: String?=null
+    val end_lat: String?=null
+    val end_lng: String?=null
+    val end_point: String?=null
+    val end_time: String?=null
+    val start_date: String?=null
+    val start_lat: String?=null
+    val start_lng: String?=null
+    val start_point: String?=null
+    val start_time: String?=null
+
 }

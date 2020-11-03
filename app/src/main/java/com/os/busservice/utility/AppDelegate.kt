@@ -371,7 +371,9 @@ object AppDelegate {
     }
 
     val currentTime: String
-        get() = SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().time)
+        get() = SimpleDateFormat("HH:mm:ss",Locale.getDefault()).format(Calendar.getInstance().time)
+    val currentDate: String
+        get() = SimpleDateFormat("dd MMM, yyyy",Locale.getDefault()).format(Calendar.getInstance().time)
 
 
     fun rotateImage(angle: Int, OriginalPhoto: Bitmap): Bitmap {

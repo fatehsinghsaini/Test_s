@@ -30,6 +30,8 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
+        <service android:name=".services.LocationUpdatesService" android:exported="false"/>
+
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_map_key"/>
 
         <activity android:name=".ui.activity.SplashActivity">

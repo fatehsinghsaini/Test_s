@@ -76,6 +76,10 @@ object Tags {
     const val mLng = "longitude"
     const val mCurrentAddress = "mCurrentAddress"
     const val mResultCode =101
+    const val mSourceLatLng ="mSourceLatLng"
+    const val mDestinationLatLng ="mDestinationLatLng"
+    const val mSourceAddress ="mSourceAddress"
+    const val mDestinationAddress ="mDestinationAddress"
 
     //delivery status
     const val Pending= "pending"

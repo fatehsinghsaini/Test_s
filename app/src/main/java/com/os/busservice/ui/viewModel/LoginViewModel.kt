@@ -336,7 +336,7 @@ class LoginViewModel : ViewModel() {
         val request = RequestModel()
         request.oldPassword = mOldPassword.value
         request.newPassword = confirmPwd.value
-        request.userId = mUserId
+        request.user_id = mUserId
         request.language="en"
 
         subscription = userDataSource!!.mChangePassword(request)
@@ -354,11 +354,11 @@ class LoginViewModel : ViewModel() {
 
     fun logoutApi( userId: String?) {
         val request = RequestModel()
-        request.userId = userId
+        request.user_id = userId
         request.language = "en"
 
 
-    /*    subscription = userDataSource!!.logout(request)
+        subscription = userDataSource!!.mLogout(request)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { d ->
@@ -371,7 +371,7 @@ class LoginViewModel : ViewModel() {
                 { throwable ->
                     logoutLiveData.postValue(commonApiResponse!!.error(throwable))
                 }
-            )*/
+            )
 
     }
 

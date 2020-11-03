@@ -4,13 +4,51 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import com.facebook.appevents.UserDataStore.FIRST_NAME
+import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
 import com.os.busservice.R
 import com.os.busservice.model.loginResponse.LoginResult
 
 
 class SessionManager : BaseObservable() {
+
+
+    var mSourceLatLng : LatLng?
+        get() =Gson().fromJson(shared!!.getString(Tags.mSourceLatLng, ""),LatLng::class.java)
+        set(result){
+
+            editor?.putString(Tags.mSourceLatLng,Gson().toJson(result))
+            editor!!.commit()
+
+        }
+
+    var mDestinationLatLng : LatLng?
+        get() =Gson().fromJson(shared!!.getString(Tags.mDestinationLatLng, ""),LatLng::class.java)
+        set(result){
+            editor?.putString(Tags.mDestinationLatLng,Gson().toJson(result))
+            editor!!.commit()
+        }
+
+    var mSourceAddress: String?
+        get() = shared!!.getString(
+            Tags.mSourceAddress,
+            ""
+        )
+        set(image){
+            editor!!.putString(Tags.mSourceAddress, image)
+            editor!!.commit()
+
+        }
+    var mDestinationAddress: String?
+        get() = shared!!.getString(
+            Tags.mDestinationAddress,
+            ""
+        )
+        set(image){
+            editor!!.putString(Tags.mDestinationAddress, image)
+            editor!!.commit()
+
+        }
 
     @get:Bindable("data")
     var loginResult: LoginResult?
@@ -20,7 +58,7 @@ class SessionManager : BaseObservable() {
             editor?.putString(Tags.phone,result?.mobile)
             editor?.putString(Tags.email,result?.email)
             editor?.putString(Tags.image,result?.photo)
-            editor?.putString(Tags.token,result?.token)
+            editor?.putString(Tags.token,result?.auth_token)
 
             fullName =result?.first_name+" "+result?.last_name
             editor?.putString(Tags.DATA,Gson().toJson(result))
@@ -28,6 +66,8 @@ class SessionManager : BaseObservable() {
 //            notifyPropertyChanged(BR.loginResult)
 
         }
+
+
 
     @get:Bindable("fullName")
     var fullName: String?

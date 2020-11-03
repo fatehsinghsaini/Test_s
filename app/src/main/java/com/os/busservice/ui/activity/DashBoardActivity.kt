@@ -180,5 +180,9 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
         }
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        AppDelegate.hideKeyBoard(this)
+    }
 
 }

@@ -4,7 +4,7 @@ import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 
 
-class ApiResponse<T> public constructor(
+class ApiResponse<T>(
     val status: Status, @param:Nullable @field:Nullable
     val data: T?,
     val error: Throwable?

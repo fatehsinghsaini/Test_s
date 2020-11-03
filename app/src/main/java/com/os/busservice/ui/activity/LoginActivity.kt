@@ -124,6 +124,7 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
 
 
     }
+
     override fun onClick(p0: View?) {
         AppDelegate.hideKeyBoard(this)
 
@@ -234,6 +235,19 @@ class LoginActivity : BaseBindingActivity(), View.OnClickListener {
         super.onBackPressed()
 
         finishAffinity()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode ==PERMISSIONS_REQUEST_CODE){
+            mService?.requestLocationUpdates()
+        }
+
+
     }
 
 

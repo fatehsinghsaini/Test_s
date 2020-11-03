@@ -2,6 +2,8 @@ package com.os.busservice.data.retro
 
 import com.os.busservice.model.CommonResponse
 import com.os.busservice.model.RequestModel
+import com.os.busservice.model.busListResponse.SeatListRequest
+import com.os.busservice.model.busListResponse.SeatListResponse
 import com.os.busservice.model.loginResponse.LoginResponse
 import io.reactivex.Observable
 import retrofit2.http.Body
@@ -18,6 +20,8 @@ interface RestApi {
 
     @POST("generat_otp")
     fun mSendOtp(@Body loginRequest: RequestModel): Observable<LoginResponse>
+    @POST("logout")
+    fun mLogout(@Body loginRequest: RequestModel): Observable<CommonResponse>
 
     @POST("facebook_login")
     fun mFacebokLogin(@Body loginRequest: RequestModel): Observable<LoginResponse>
@@ -29,6 +33,9 @@ interface RestApi {
 
     @POST("generat_otp")
     fun mChangePassword(@Body loginRequest: RequestModel): Observable<CommonResponse>
+
+    @POST("bus_route_listing")
+    fun mBusSeatList(@Body loginRequest: SeatListRequest): Observable<SeatListResponse>
 
    /* @Multipart
     @POST("update-profile")

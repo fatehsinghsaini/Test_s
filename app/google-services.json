@@ -15,40 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "731183445843-4m0717td2ovikufup6plqh1remdkrmhd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCxLgUjMrBioJOHGWtN25U7y9J29o3HFxk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "731183445843-4m0717td2ovikufup6plqh1remdkrmhd.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:731183445843:android:215438724ba027136793a6",
-        "android_client_info": {
-          "package_name": "com.trisoft.rajway"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "731183445843-h16bd35relso2bma8m6slsnu9oq1hes6.apps.googleusercontent.com",
+          "client_id": "731183445843-1nc46644j03jurtkin6u2ev4n97dlckp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.trisoft.rajway",
-            "certificate_hash": "220c168d08ef30505a002b09835dead4b50e3a76"
+            "package_name": "com.os.busservice",
+            "certificate_hash": "0a11a9714b4fe61dbd9ca3df660742dd42cfc842"
           }
         },
         {
