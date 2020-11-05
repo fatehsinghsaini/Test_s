@@ -1,22 +1,20 @@
 package com.os.busservice.ui.activity
 
-import android.R.attr.label
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.widget.Toast
 import androidx.core.app.ShareCompat
 import com.os.busservice.R
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.utility.AppDelegate
-import kotlinx.android.synthetic.main.activity_coupon_code.*
-import kotlinx.android.synthetic.main.activity_coupon_code.couponCode
+import kotlinx.android.synthetic.main.activity_refer_and_earn.*
+
 import kotlinx.android.synthetic.main.common_toolbar.*
 
 
-class CouponCodeActivity : BaseBindingActivity()  {
+class ReferAndEarnActivity : BaseBindingActivity()  {
     override fun setBinding() {
-     setContentView(R.layout.activity_coupon_code)
+     setContentView(R.layout.activity_refer_and_earn)
     }
 
     override fun createActivityObject() {

@@ -52,7 +52,7 @@ class EditProfileActivity : BaseBindingActivity(), ImagePickerUtility.ImagePicke
 
         mView?.mViewModel = mMoreViewModel
 
-        toolbarName.setText(getString(R.string.edit_profile))
+        toolbarName.text = getString(R.string.edit_profile)
     }
 
     override fun setListeners() {

@@ -1,5 +1,4 @@
 package com.os.busservice.ui.fragment
-
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -41,13 +40,13 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
        mActivity=activity
         mView?.mSession =sessionManager
 
-
-
     }
 
     override fun setListeners() {
         manageAddress.setOnClickListener(this)
         changePwd.setOnClickListener(this)
+        shareCouponCode.setOnClickListener(this)
+        offerListing.setOnClickListener(this)
         editProfile.setOnClickListener(this)
         logout.setOnClickListener(this)
     }
@@ -66,6 +65,8 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
             R.id.manageAddress -> startActivity(Intent(mActivity, AddressListActivity::class.java))
             R.id.changePwd ->   startActivity(Intent(mActivity, ChangePwdActivity::class.java))
             R.id.editProfile ->   startActivity(Intent(mActivity, EditProfileActivity::class.java))
+            R.id.offerListing ->   startActivity(Intent(mActivity, OfferListingActivity::class.java))
+            R.id.shareCouponCode ->   startActivity(Intent(mActivity, ReferAndEarnActivity::class.java))
             R.id.logout ->   AppDelegate.showAlert(
                 mActivity!!,
                 getString(R.string.logout),

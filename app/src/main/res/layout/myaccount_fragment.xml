@@ -136,6 +136,22 @@
                 />
 
             <TextView
+                android:id="@+id/myBooking"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/my_booking"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent"
+                android:visibility="visible"
+                />
+
+            <TextView
                 android:id="@+id/manageAddress"
                 style="@style/TextStyleNormal"
                 android:layout_width="match_parent"
@@ -143,12 +159,11 @@
                 android:padding="@dimen/_8sdp"
                 android:text="@string/manage_address"
                 android:textSize="@dimen/_12sdp" />
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorAccent"
-                android:visibility="gone"
+                android:visibility="visible"
                 />
 
             <TextView
@@ -158,8 +173,23 @@
                 android:layout_height="match_parent"
                 android:gravity="start"
                 android:padding="@dimen/_8sdp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:text="@string/my_wallet"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/shareCouponCode"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/refer_earn"
                 android:textSize="@dimen/_12sdp" />
 
             <View
@@ -175,6 +205,51 @@
                 android:gravity="start"
                 android:padding="@dimen/_8sdp"
                 android:text="@string/change_password"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/offerListing"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/offers"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/help"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/help"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/callSupport"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/call_support"
                 android:textSize="@dimen/_12sdp" />
 
             <View

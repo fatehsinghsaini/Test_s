@@ -193,7 +193,11 @@
     <string name="text_copy_successfully">Refer code copy successfully</string>
     <string name="you_have_got">You\'ve got</string>
     <string name="share_coupon_code">Share Referral Code</string>
-
+    <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
+    <string name="my_booking">My Booking</string>
+    <string name="offers">Offers</string>
+    <string name="help">Help</string>
+    <string name="call_support">Call Support</string>
 
 
 </resources>
