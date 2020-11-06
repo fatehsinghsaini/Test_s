@@ -6,7 +6,7 @@
 
         <variable
             name="mAdapter"
-            type="com.os.busservice.ui.adapter.seat.UpperBusSeatAdapter" />
+            type="com.os.busservice.ui.adapter.seat.LowerBusSeatAdapter" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,7 +21,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="5"
             android:adapter ="@{mAdapter}"
-            tools:listitem="@layout/list_item_seat_upper"
+            tools:listitem="@layout/list_item_seat"
 
             />
 

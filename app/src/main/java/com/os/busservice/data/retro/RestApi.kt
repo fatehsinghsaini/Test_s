@@ -4,6 +4,7 @@ import com.os.busservice.model.CommonResponse
 import com.os.busservice.model.RequestModel
 import com.os.busservice.model.busListResponse.SeatListRequest
 import com.os.busservice.model.busListResponse.SeatListResponse
+import com.os.busservice.model.couponCode.CouponListResponse
 import com.os.busservice.model.loginResponse.LoginResponse
 import io.reactivex.Observable
 import retrofit2.http.Body
@@ -36,6 +37,8 @@ interface RestApi {
 
     @POST("bus_route_listing")
     fun mBusSeatList(@Body loginRequest: SeatListRequest): Observable<SeatListResponse>
+    @POST("coupon_code_list")
+    fun mCouponList(@Body loginRequest: RequestModel): Observable<CouponListResponse>
 
    /* @Multipart
     @POST("update-profile")

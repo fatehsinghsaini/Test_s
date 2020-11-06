@@ -5,6 +5,7 @@ import com.os.busservice.model.CommonResponse
 import com.os.busservice.model.RequestModel
 import com.os.busservice.model.busListResponse.SeatListRequest
 import com.os.busservice.model.busListResponse.SeatListResponse
+import com.os.busservice.model.couponCode.CouponListResponse
 import com.os.busservice.model.loginResponse.LoginResponse
 import io.reactivex.Observable
 
@@ -44,5 +45,8 @@ class UserDataSource(private var apiCallInterface: RestApi) {
     }
     fun mBusSeatList(loginRequest: SeatListRequest): Observable<SeatListResponse> {
         return apiCallInterface.mBusSeatList(loginRequest)
+    }
+    fun mCouponList(loginRequest: RequestModel): Observable<CouponListResponse> {
+        return apiCallInterface.mCouponList(loginRequest)
     }
 }

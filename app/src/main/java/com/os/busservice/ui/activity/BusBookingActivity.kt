@@ -8,6 +8,7 @@ import com.os.busservice.databinding.BusSearchListingBinding
 import com.os.busservice.listeners.BusSearchListener
 import com.os.busservice.listeners.CommonListener
 import com.os.busservice.model.address.AddressResult
+import com.os.busservice.model.busListResponse.BusRouteData
 import com.os.busservice.ui.adapter.BusSearchItemAdapter
 import com.os.busservice.ui.adapter.PassengerInfoAdapter
 import com.os.busservice.ui.baseFile.BaseBindingActivity
@@ -38,9 +39,9 @@ class BusBookingActivity :BaseBindingActivity(), BusSearchListener {
         back.setOnClickListener { finish() }
     }
 
-    override fun mSeatSelected(item: AddressResult?) {
+    override fun mSeatSelected(item: BusRouteData?) {
     }
 
-    override fun mBusTrackingClick(item: AddressResult?) {
+    override fun mBusTrackingClick(item: BusRouteData?) {
     }
 }

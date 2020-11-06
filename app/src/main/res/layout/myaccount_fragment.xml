@@ -10,6 +10,13 @@
 
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -258,6 +265,21 @@
                 android:background="@color/colorAccent" />
 
             <TextView
+                android:id="@+id/aboutUs"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/about_us"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
                 android:id="@+id/logout"
                 style="@style/TextStyleNormal"
                 android:layout_width="match_parent"
@@ -266,7 +288,9 @@
                 android:padding="@dimen/_8sdp"
                 android:text="@string/logout"
                 android:visibility="visible"
-                android:textSize="@dimen/_12sdp" />
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/colorPrimary"
+                />
 
             <View
                 android:layout_width="match_parent"
@@ -280,6 +304,8 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 
 
 </layout>

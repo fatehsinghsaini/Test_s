@@ -53,7 +53,7 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
             when (intent.getStringExtra(Tags.DATA)) {
                 Tags.ORDERS -> {
                     toolbarName.text =getString(R.string.app_name)
-
+                    toolbarLayout.visibility = View.GONE
                     bottom_navigation.selectedItemId = R.id.navigation_order
                     changeFragment(HomeFragment(), false)
                 }
@@ -61,6 +61,7 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
 
         } else{
 
+            toolbarLayout.visibility = View.GONE
             bottom_navigation.selectedItemId = R.id.navigation_home
             changeFragment(HomeFragment(), false)
         }
@@ -78,9 +79,13 @@ class DashBoardActivity : BaseBindingActivity(), ActivityFromFragmentCallack,Vie
                 supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 logo.visibility =View.VISIBLE
                 back.visibility =View.GONE
+                toolbarLayout.visibility = View.VISIBLE
 
                 when (item.itemId) {
                     R.id.navigation_home -> {
+
+                        toolbarLayout.visibility = View.GONE
+
                         toolbarName.text =getString(R.string.bus_ticket)
                         changeFragment(HomeFragment(),false)
                         return true

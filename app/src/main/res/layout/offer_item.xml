@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
+    <data>
+        <variable
+            name="mItem"
+            type="com.os.busservice.model.couponCode.CouponData" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@mipmap/ic_launcher"
+        thumbnail="@{mItem.offer_image}"
         />
     <LinearLayout
         android:id="@+id/layout"
@@ -28,7 +36,7 @@
             style="@style/TextStyleBold"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="PromoCode"
+            android:text="@{mItem.promotional_code}"
             android:textSize="@dimen/_13sdp"
             android:textColor="@color/black"
             />
@@ -36,7 +44,7 @@
             style="@style/TextStyleSemiBold"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Expire 16 Fab 2020"
+            android:text="@{mItem.valid_to}"
             android:textColor="@color/colorRed"
             android:textSize="@dimen/_11sdp"
             />

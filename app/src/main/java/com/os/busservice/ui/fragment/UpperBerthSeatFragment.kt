@@ -1,6 +1,5 @@
 package com.os.busservice.ui.fragment
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,26 +7,20 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.os.busservice.R
 import com.os.busservice.databinding.UpperBerthFragmentBinding
-import com.os.busservice.listeners.CommonListener
 import com.os.busservice.listeners.OnSeatSelected
-import com.os.busservice.model.address.AddressResult
 import com.os.busservice.model.seat.AbstractItem
-import com.os.busservice.model.seat.CenterItem
 import com.os.busservice.model.seat.EdgeItem
 import com.os.busservice.model.seat.EmptyItem
 import com.os.busservice.ui.activity.BusSeatActivity
-import com.os.busservice.ui.activity.DashBoardActivity
-import com.os.busservice.ui.activity.GroupDetailsActivity
-import com.os.busservice.ui.adapter.seat.BusSeatAdapter
+import com.os.busservice.ui.adapter.seat.UpperBusSeatAdapter
 import com.os.busservice.ui.baseFile.BaseFragment
 import com.os.busservice.utility.AppDelegate
-import kotlinx.android.synthetic.main.upper_berth_fragment.*
 
 
 class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
     private  var mBinging: UpperBerthFragmentBinding?=null
-    private var mAdapter:BusSeatAdapter?=null
-    private val COLUMNS = 5
+    private var mAdapter: UpperBusSeatAdapter?=null
+    private val COLUMNS = 4
 
     companion object {
         //1=online request,2=my offers
@@ -50,18 +43,16 @@ class UpperBerthSeatFragment : BaseFragment<BusSeatActivity>(),OnSeatSelected {
     override fun createActivityObject() {
 
         val items: MutableList<AbstractItem> = ArrayList()
-        for (i in 0..29) {
+        for (i in 0..23) {
             AppDelegate.Log("Seat Count",(i % COLUMNS).toString())
-            if (i % COLUMNS == 0 || i % COLUMNS == 4) {
+            if (i % COLUMNS == 0 || i % COLUMNS == 2 || i % COLUMNS == 3) {
                 items.add(EdgeItem(i.toString()))
-            } else if (i % COLUMNS == 1 || i % COLUMNS == 3) {
-                items.add(CenterItem(i.toString()))
             } else {
                 items.add(EmptyItem(i.toString()))
             }
         }
 
-        mAdapter = BusSeatAdapter(activity!!,items,this)
+        mAdapter = UpperBusSeatAdapter(activity!!,items,this)
 
     }
 

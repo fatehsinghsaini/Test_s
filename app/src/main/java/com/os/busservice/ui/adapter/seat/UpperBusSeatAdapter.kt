@@ -12,7 +12,7 @@ import com.os.busservice.model.seat.AbstractItem
 import com.os.busservice.model.seat.CenterItem
 import com.os.busservice.model.seat.EdgeItem
 
-class BusSeatAdapter(
+class UpperBusSeatAdapter(
     private val mContext: Context,
     items: List<AbstractItem>,
     private val mOnSeatSelected: OnSeatSelected
@@ -52,11 +52,8 @@ class BusSeatAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == AbstractItem.TYPE_CENTER) {
-            val itemView = mLayoutInflater.inflate(R.layout.list_item_seat, parent, false)
-            CenterViewHolder(itemView)
-        } else if (viewType == AbstractItem.TYPE_EDGE) {
-            val itemView = mLayoutInflater.inflate(R.layout.list_item_seat, parent, false)
+        return if (viewType == AbstractItem.TYPE_EDGE) {
+            val itemView = mLayoutInflater.inflate(R.layout.list_item_seat_upper, parent, false)
             EdgeViewHolder(itemView)
         } else {
             val itemView = View(mContext)

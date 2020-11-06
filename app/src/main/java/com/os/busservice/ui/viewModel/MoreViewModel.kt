@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import com.os.busservice.data.ApiResponse
 import com.os.busservice.data.datasource.UserDataSource
 import com.os.busservice.data.retro.RestApiFactory
+import com.os.busservice.model.CommonResponse
 import com.os.busservice.model.RequestModel
+import com.os.busservice.model.couponCode.CouponListResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -24,6 +26,7 @@ class MoreViewModel : ViewModel() {
     var email = MutableLiveData<String>()
     var mobile = MutableLiveData<String>()
     var error = MutableLiveData<String>()
+    var mCouponListLiveData = MutableLiveData<ApiResponse<CouponListResponse>>()
 /*    var staticPageLiveData = MutableLiveData<ApiResponse<StaticPageResponse>>()
     var notificationLiveData = MutableLiveData<ApiResponse<NotificationResponse>>()
     var deleteNotificationLiveData = MutableLiveData<ApiResponse<NotificationResponse>>()
@@ -31,17 +34,17 @@ class MoreViewModel : ViewModel() {
 
 
     private var restApiFactory: RestApiFactory? = null
-/*    var apiResponse: ApiResponse<StaticPageResponse>? = null
-    var mNotificationApiResponse: ApiResponse<NotificationResponse>? = null
-    var mUpdateProfileApiResponse: ApiResponse<UpdateProfileResponse>? = null*/
+   var apiResponse: ApiResponse<CouponListResponse>? = null
+    /*   var mNotificationApiResponse: ApiResponse<NotificationResponse>? = null
+      var mUpdateProfileApiResponse: ApiResponse<UpdateProfileResponse>? = null*/
 
     private var subscription: Disposable? = null
     init {
         restApiFactory = RestApiFactory
         userDataSource = UserDataSource(restApiFactory!!.create())
-       /* apiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
-        mNotificationApiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
-        mUpdateProfileApiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)*/
+       apiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
+        /*   mNotificationApiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)
+          mUpdateProfileApiResponse = ApiResponse(ApiResponse.Status.LOADING, null, null)*/
 
     }
 
@@ -141,6 +144,30 @@ class MoreViewModel : ViewModel() {
             )
 
     }*/
+
+
+    fun mGetCouponList(userId: String?) {
+        val request = RequestModel()
+        request.language = "en"
+        request.user_id = userId
+
+
+        subscription = userDataSource!!.mCouponList(request)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { d ->
+                mCouponListLiveData.postValue(apiResponse!!.loading())
+            }
+            .subscribe(
+                { result ->
+                    mCouponListLiveData.postValue(apiResponse!!.success(result))
+                },
+                { throwable ->
+                    mCouponListLiveData.postValue(apiResponse!!.error(throwable))
+                }
+            )
+
+    }
 
 
 }
