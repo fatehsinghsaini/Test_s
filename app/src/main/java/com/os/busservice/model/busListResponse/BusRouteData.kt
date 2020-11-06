@@ -1,6 +1,6 @@
 package com.os.busservice.model.busListResponse
 
-data class Data(
+data class BusRouteData(
     val available_sheat: Any,
     val available_sheat_sleeper: Any,
     val bus_driver_id: String,
@@ -9,7 +9,7 @@ data class Data(
     val bus_owner_name: String,
     val bus_rc_no: String,
     val bus_registration_no: String,
-    val bus_route: BusRoute,
+    val bus_route: ArrayList<BusRoute>,
     val bus_type: BusType,
     val created_at: String,
     val end_time: String,

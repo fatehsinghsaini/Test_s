@@ -11,6 +11,7 @@ import com.os.busservice.databinding.BusSearchListingBinding
 import com.os.busservice.listeners.BusSearchListener
 import com.os.busservice.listeners.CommonListener
 import com.os.busservice.model.address.AddressResult
+import com.os.busservice.model.busListResponse.BusRouteData
 import com.os.busservice.model.busListResponse.SeatListRequest
 import com.os.busservice.model.busListResponse.SeatListResponse
 import com.os.busservice.model.loginResponse.LoginResponse
@@ -63,11 +64,11 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
 
 
 
-    override fun mSeatSelected(item: AddressResult?) {
+    override fun mSeatSelected(item: BusRouteData?) {
         startActivity(Intent(mActivity,BusSeatActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
     }
 
-    override fun mBusTrackingClick(item: AddressResult?) {
+    override fun mBusTrackingClick(item: BusRouteData?) {
         startActivity(Intent(mActivity,BusTrackingActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
     }
 
@@ -85,6 +86,8 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
                 if (result.data?.success!!) {
                     UtilityMethods.showToastMessage(mActivity!!, result.data.message)
                     val userItem = result.data.result
+                    mAdapter.mUpdateList(userItem as ArrayList<BusRouteData>)
+                    mAdapter.notifyDataSetChanged()
 
                 } else
                 {

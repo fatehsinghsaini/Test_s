@@ -6,7 +6,7 @@
             type="com.os.busservice.listeners.BusSearchListener" />
         <variable
             name="mItem"
-            type="com.os.busservice.model.address.AddressResult" />
+            type="com.os.busservice.model.busListResponse.BusRouteData" />
 
     </data>
 <LinearLayout
@@ -30,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Saini Bus Service"
+            android:text="@{mItem.name}"
             android:textSize="@dimen/_12sdp"
             android:layout_weight=".8"
             />
