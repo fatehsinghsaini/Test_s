@@ -12,9 +12,11 @@ import com.os.busservice.listeners.BusSearchListener
 import com.os.busservice.listeners.CommonListener
 import com.os.busservice.model.address.AddressResult
 import com.os.busservice.model.busListResponse.BusRouteData
+import com.os.busservice.model.busListResponse.BusType
 import com.os.busservice.model.busListResponse.SeatListRequest
 import com.os.busservice.model.busListResponse.SeatListResponse
 import com.os.busservice.model.loginResponse.LoginResponse
+import com.os.busservice.ui.adapter.BottomBusTypeDialogAdapter
 import com.os.busservice.ui.adapter.BusSearchItemAdapter
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.HomeViewModel
@@ -24,8 +26,8 @@ import com.os.busservice.utility.UtilityMethods
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 class BusSearchListing :BaseBindingActivity(), BusSearchListener {
-
     private lateinit var mAdapter: BusSearchItemAdapter
+    private lateinit var mBottomDialogAdapter: BottomBusTypeDialogAdapter
     private var mBinding: BusSearchListingBinding?=null
     private var mViewModel:HomeViewModel?=null
 
@@ -35,6 +37,13 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
 
     override fun createActivityObject() {
         mAdapter = BusSearchItemAdapter(this)
+
+        val mList = ArrayList<BusType>()
+        mList.add(BusType(R.drawable.ic_air_conditioner,getString(R.string.ac),""))
+        mList.add(BusType(R.drawable.ic_non_ac,getString(R.string.non_ac),""))
+        mList.add(BusType(R.drawable.ic_noun_bus_seat,getString(R.string.seater),""))
+
+        mBottomDialogAdapter = BottomBusTypeDialogAdapter(this,mList,this)
         mViewModel=ViewModelProvider(this).get(HomeViewModel::class.java)
 
 
@@ -43,6 +52,7 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
     override fun initializeObject() {
         mActivity=this
         mBinding?.mAdapter = mAdapter
+        mBinding?.mBottomDialogAdapter = mBottomDialogAdapter
 
         var mBusModel: SeatListRequest? = null
         if(intent.hasExtra(Tags.DATA))
@@ -61,7 +71,6 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
     override fun setListeners() {
         back.setOnClickListener { finish() }
     }
-
 
 
     override fun mSeatSelected(item: BusRouteData?) {

@@ -6,6 +6,9 @@
         <variable
             name="mAdapter"
             type="com.os.busservice.ui.adapter.BusSearchItemAdapter" />
+        <variable
+            name="mBottomDialogAdapter"
+            type="com.os.busservice.ui.adapter.BottomBusTypeDialogAdapter" />
     </data>
 
 <RelativeLayout
@@ -60,6 +63,7 @@
         android:layout_height="wrap_content"
         layout="@layout/bottom_bus_type_dialog"
         android:layout_alignParentBottom="true"
+        android:adapter ="@{mBottomDialogAdapter}"
         />
 
 </RelativeLayout>

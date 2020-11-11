@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="mItem"
+            type="com.os.busservice.model.busListResponse.BusType" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_noun_bus_seat"
+        android:text="@string/seater"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:drawableTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</LinearLayout>
+
+</layout>

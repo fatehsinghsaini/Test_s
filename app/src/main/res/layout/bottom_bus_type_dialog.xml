@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+    <data>
+        <variable
+            name="adapter"
+            type="com.os.busservice.ui.adapter.BottomBusTypeDialogAdapter" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/colorPrimary">
 
-    <TextView
+   <!-- <TextView
         style="@style/TextStyleSemiBold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,7 +22,6 @@
         android:text="@string/ac"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
-        android:textSize="@dimen/_12sdp"
         android:textColor="@color/white"
         android:drawableTint="@color/white"
         />
@@ -25,12 +30,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:drawableTop="@drawable/ic_fan"
+        android:drawableTop="@drawable/ic_non_ac"
         android:text="@string/non_ac"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
         android:textAllCaps="true"
-        android:textSize="@dimen/_12sdp"
         android:textColor="@color/white"
         android:drawableTint="@color/white"
         />
@@ -39,29 +43,48 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:drawableTop="@drawable/ic_fan"
+        android:drawableTop="@drawable/ic_noun_bus_seat"
         android:text="@string/seater"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
         android:textAllCaps="true"
-        android:textSize="@dimen/_12sdp"
         android:textColor="@color/white"
         android:drawableTint="@color/white"
-        />
-    <TextView
-        style="@style/TextStyleSemiBold"
+        />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBottomSeatView"
         android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/bottom_seat_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvFilter"
+        tools:itemCount="8"
+        android:adapter ="@{adapter}"
+        />
+
+    <TextView
+        android:id="@+id/tvFilter"
+        style="@style/TextStyleSemiBold"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:drawableTop="@drawable/ic_fan"
-        android:text="@string/sleeper"
+        android:drawableTop="@drawable/ic_baseline_filter_list"
+        android:text="@string/filter"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
         android:textAllCaps="true"
-        android:textSize="@dimen/_12sdp"
         android:textColor="@color/white"
-        android:drawableTint="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/rvBottomSeatView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
