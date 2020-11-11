@@ -27,7 +27,7 @@ class BottomBusTypeDialogAdapter(var mCartListener: BusSearchListener,var mList:
                0-> binding.tvName.setCompoundDrawables(null,ContextCompat.getDrawable(mContext,R.drawable.ic_air_conditioner),null,null)
                1-> binding.tvName.setCompoundDrawables(null,ContextCompat.getDrawable(mContext,R.drawable.ic_non_ac),null,null)
                2-> binding.tvName.setCompoundDrawables(null,ContextCompat.getDrawable(mContext,R.drawable.ic_noun_bus_seat),null,null)
-               3-> binding.tvName.setCompoundDrawables(null,ContextCompat.getDrawable(mContext,R.drawable.ic_air_conditioner),null,null)
+               3-> binding.tvName.setCompoundDrawables(null,ContextCompat.getDrawable(mContext,R.drawable.ic_noun_sleeping),null,null)
 
            }
 

@@ -42,6 +42,7 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
         mList.add(BusType(R.drawable.ic_air_conditioner,getString(R.string.ac),""))
         mList.add(BusType(R.drawable.ic_non_ac,getString(R.string.non_ac),""))
         mList.add(BusType(R.drawable.ic_noun_bus_seat,getString(R.string.seater),""))
+        mList.add(BusType(R.drawable.ic_noun_sleeping,getString(R.string.sleeper),""))
 
         mBottomDialogAdapter = BottomBusTypeDialogAdapter(this,mList,this)
         mViewModel=ViewModelProvider(this).get(HomeViewModel::class.java)
