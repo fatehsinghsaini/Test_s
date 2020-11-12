@@ -23,6 +23,7 @@ import com.os.busservice.ui.viewModel.HomeViewModel
 import com.os.busservice.utility.ProgressDialog
 import com.os.busservice.utility.Tags
 import com.os.busservice.utility.UtilityMethods
+import kotlinx.android.synthetic.main.bottom_bus_type_dialog.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 class BusSearchListing :BaseBindingActivity(), BusSearchListener {
@@ -71,6 +72,7 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
 
     override fun setListeners() {
         back.setOnClickListener { finish() }
+        tvFilter.setOnClickListener {  startActivity(Intent(mActivity,SortAndFilterActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)) }
     }
 
 

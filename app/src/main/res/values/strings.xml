@@ -201,6 +201,18 @@
     <string name="about_us">About Us</string>
     <string name="no_data_found">No Data Found</string>
     <string name="sort_filter"><![CDATA[Sort & Filter]]></string>
+    <string name="bus_operator">Bus Operator</string>
+    <string name="bus_features">Bus Features</string>
+    <string name="live_tracking">Live Tracking</string>
+    <string name="high_rated_buses">High Rated Buses</string>
+    <string name="reschedulable">Reschedulable</string>
+    <string name="Bus_arrival_time_destination">Bus Arrival Time At Destination</string>
+    <string name="sort_by">Sort By</string>
+    <string name="best_rated_first">Best Rated First</string>
+    <string name="filter_by">Filter By</string>
+    <string name="cheapest_first">Cheapest First</string>
+    <string name="early_departure">Early Departure</string>
+    <string name="late_departure">Late Departure</string>
 
 
 </resources>
