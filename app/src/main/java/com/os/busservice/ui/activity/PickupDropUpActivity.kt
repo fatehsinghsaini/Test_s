@@ -30,7 +30,6 @@ class PickupDropUpActivity :BaseBindingActivity(), ActivityFromFragmentCallack,T
         mActivity=this
         toolbarName.text ="Jaipur to Kota"
 
-
         mBinding!!.viewPager.adapter = PickUpDropUpPagerAdapter(supportFragmentManager,lifecycle)
         TabLayoutMediator(mBinding!!.tabLayout, mBinding!!.viewPager) { tab, position ->
             mBinding!!.viewPager.setCurrentItem(tab.position, true)

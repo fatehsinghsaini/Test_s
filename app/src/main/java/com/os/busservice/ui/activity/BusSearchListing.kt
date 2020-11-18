@@ -61,6 +61,7 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
             mBusModel =intent.getParcelableExtra(Tags.DATA)
 
         toolbarName.text ="${mBusModel?.start_point} to ${mBusModel?.end_point}"
+        mBinding?.date?.text =mBusModel?.start_date
 
         mBusModel?.let { mViewModel?.mBusSeatListResponse(it) }
 
@@ -77,7 +78,7 @@ class BusSearchListing :BaseBindingActivity(), BusSearchListener {
 
 
     override fun mSeatSelected(item: BusRouteData?) {
-        startActivity(Intent(mActivity,BusSeatActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
+        startActivity(Intent(mActivity,BusSeatActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT).putExtra(Tags.DATA,item))
     }
 
     override fun mBusTrackingClick(item: BusRouteData?) {

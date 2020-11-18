@@ -5,12 +5,16 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.os.busservice.R
 import com.os.busservice.databinding.BusSeatActivityBinding
+import com.os.busservice.model.busListResponse.BusRouteData
 import com.os.busservice.ui.adapter.pager.SeatPagerAdapter
 import com.os.busservice.ui.baseFile.ActivityFromFragmentCallack
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.utility.AppDelegate
+import com.os.busservice.utility.Tags
 import kotlinx.android.synthetic.main.bottom_bus_seat_selection.*
+import kotlinx.android.synthetic.main.bus_seat_toolbar.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.back
 
 class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLayout.OnTabSelectedListener {
     private var mBinding: BusSeatActivityBinding?=null
@@ -25,6 +29,14 @@ class BusSeatActivity :BaseBindingActivity(), ActivityFromFragmentCallack,TabLay
 
     override fun initializeObject() {
         mActivity=this
+
+        var mBusData: BusRouteData?=null
+        if(intent.hasExtra(Tags.DATA))
+            mBusData= intent.getParcelableExtra(Tags.DATA)
+        //set values
+        bus_date.text = mBusData?.created_at
+        bus_name.text = mBusData?.name
+        bus_type.text = mBusData?.bus_type?.name
 
 
         mBinding!!.viewPager.adapter = SeatPagerAdapter(supportFragmentManager,lifecycle)

@@ -1,8 +1,12 @@
 package com.os.busservice.model.busListResponse
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class BusRouteData(
-    val available_sheat: Any,
-    val available_sheat_sleeper: Any,
+    val available_sheat: String,
+    val available_sheat_sleeper: String,
     val bus_driver_id: String,
     val bus_group: String,
     val bus_no: String,
@@ -26,4 +30,4 @@ data class BusRouteData(
     val sleeper_price: String,
     val start_time: String,
     val type_sheet: String
-)
+):Parcelable
