@@ -19,7 +19,7 @@
 
         >
 
-        <include layout="@layout/common_toolbar" />
+        <include layout="@layout/main_toolbar_layout" />
 
 
         <FrameLayout
@@ -143,7 +143,7 @@
                     android:layout_marginStart="@dimen/_5sdp"
                     android:gravity="center|start"
                     app:ccp_clickable="false"
-                    app:ccp_defaultNameCode="IE"
+                    app:ccp_defaultNameCode="IN"
                     app:ccp_hideNameCode="true"
                     />
 

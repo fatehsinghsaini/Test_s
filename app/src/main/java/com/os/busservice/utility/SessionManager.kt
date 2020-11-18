@@ -55,7 +55,7 @@ class SessionManager : BaseObservable() {
         get() =Gson().fromJson(shared!!.getString(Tags.DATA, ""),LoginResult::class.java)
         set(result){
 
-            editor?.putString(Tags.phone,result?.mobile)
+            editor?.putString(Tags.phone,result?.mobile_number)
             editor?.putString(Tags.email,result?.email)
             editor?.putString(Tags.image,result?.photo)
             editor?.putString(Tags.token,result?.auth_token)

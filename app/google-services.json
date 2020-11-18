@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:731183445843:android:242cd0385295169a6793a6",
+        "mobilesdk_app_id": "1:731183445843:android:60f0c17f161dc2e76793a6",
         "android_client_info": {
           "package_name": "com.os.busservice"
         }
@@ -36,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "731183445843-4m0717td2ovikufup6plqh1remdkrmhd.apps.googleusercontent.com",
+              "client_id": "731183445843-fp8ad3694qjepacnbuolpcjud95ao1kp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

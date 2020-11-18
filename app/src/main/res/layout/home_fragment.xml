@@ -73,6 +73,7 @@
                                 android:drawableStart="@drawable/ic_bus"
                                 android:drawableLeft="@drawable/ic_bus"
                                 android:drawablePadding="@dimen/_6sdp"
+
                                 android:textColor="@color/black"
                                 android:imeOptions="actionNext"
                                 android:clickable="false"

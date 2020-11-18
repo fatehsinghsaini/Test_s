@@ -15,6 +15,7 @@ class SortAndFilterActivity : BaseBindingActivity() {
     }
 
     override fun initializeObject() {
+        mActivity =this
     }
 
     override fun setListeners() {

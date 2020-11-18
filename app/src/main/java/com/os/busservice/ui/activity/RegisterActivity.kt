@@ -49,7 +49,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
 
             mViewModel!!.firstName.value = userItems?.first_name
             mViewModel!!.lastName.value = userItems?.last_name
-            mViewModel!!.mobileNo.value = userItems?.mobile
+            mViewModel!!.mobileNo.value = userItems?.mobile_number
             mViewModel!!.emial.value = userItems?.email
 
             if(intent.hasExtra(Tags.LOGIN))
@@ -144,7 +144,7 @@ class RegisterActivity : BaseBindingActivity(), View.OnClickListener {
                     userItem.first_name = mViewModel?.firstName?.value
                     userItem.last_name = mViewModel?.lastName?.value
                     userItem.email = mViewModel?.emial?.value.toString()
-                    userItem.mobile = mViewModel?.mobileNo?.value
+                    userItem.mobile_number = mViewModel?.mobileNo?.value
                     userItem.country_code = mViewModel?.countryCode?.value.toString()
                     userItem.password = mViewModel?.password?.value
 

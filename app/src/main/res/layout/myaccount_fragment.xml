@@ -190,6 +190,22 @@
                 android:background="@color/colorAccent" />
 
             <TextView
+                android:id="@+id/notificationList"
+                style="@style/TextStyleNormal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:visibility="visible"
+                android:text="@string/notification"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
                 android:id="@+id/shareCouponCode"
                 style="@style/TextStyleNormal"
                 android:layout_width="match_parent"

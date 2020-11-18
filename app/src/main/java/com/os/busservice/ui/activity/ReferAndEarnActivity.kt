@@ -8,8 +8,7 @@ import com.os.busservice.R
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.utility.AppDelegate
 import kotlinx.android.synthetic.main.activity_refer_and_earn.*
-
-import kotlinx.android.synthetic.main.common_toolbar.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 
 class ReferAndEarnActivity : BaseBindingActivity()  {
@@ -27,7 +26,7 @@ class ReferAndEarnActivity : BaseBindingActivity()  {
     }
 
     override fun setListeners() {
-        toolbarBackBt.setOnClickListener { finish() }
+        back.setOnClickListener { finish() }
         copyTextLL.setOnClickListener {
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

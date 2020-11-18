@@ -48,6 +48,7 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
         shareCouponCode.setOnClickListener(this)
         offerListing.setOnClickListener(this)
         editProfile.setOnClickListener(this)
+        notificationList.setOnClickListener(this)
         logout.setOnClickListener(this)
     }
 
@@ -63,6 +64,7 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
 
         when(p0?.id){
             R.id.manageAddress -> startActivity(Intent(mActivity, AddressListActivity::class.java))
+            R.id.notificationList -> startActivity(Intent(mActivity, AddressListActivity::class.java))
             R.id.changePwd ->   startActivity(Intent(mActivity, ChangePwdActivity::class.java))
             R.id.editProfile ->   startActivity(Intent(mActivity, EditProfileActivity::class.java))
             R.id.offerListing ->   startActivity(Intent(mActivity, OfferListingActivity::class.java))
@@ -104,7 +106,16 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
 
 
                 } else
+                {
+                    startActivity(
+                        Intent(
+                            activity,
+                            LoginActivity::class.java
+                        ).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                    )
+                    activity!!.finish()
                     UtilityMethods.showToastMessage(mActivity!!, result.data.msg)
+                }
 
             }
 

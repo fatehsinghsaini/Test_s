@@ -243,7 +243,7 @@ class LoginViewModel : ViewModel() {
         val request = RequestModel()
         request.firstName = result?.first_name
         request.lastName = result?.last_name
-        request.mobile = result?.mobile
+        request.mobile = result?.mobile_number
         request.country_code = result?.country_code
         request.email = result?.email
         request.password = result?.password

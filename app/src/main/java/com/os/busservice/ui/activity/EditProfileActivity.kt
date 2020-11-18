@@ -6,10 +6,8 @@ import android.text.TextUtils
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.os.busservice.R
-import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.EditProfileActivityBinding
 import com.os.busservice.ui.baseFile.BaseBindingActivity
 import com.os.busservice.ui.viewModel.MoreViewModel
@@ -17,8 +15,8 @@ import com.os.busservice.utility.AppDelegate
 import com.os.busservice.utility.ImagePickerUtility
 import com.os.busservice.utility.UtilityMethods
 import com.pepperonas.materialdialog.MaterialDialog
-import kotlinx.android.synthetic.main.common_toolbar.*
 import kotlinx.android.synthetic.main.edit_profile_activity.*
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 import java.io.File
 
@@ -44,11 +42,11 @@ class EditProfileActivity : BaseBindingActivity(), ImagePickerUtility.ImagePicke
     override fun initializeObject() {
         mActivity = this
         imagePickerUtil = ImagePickerUtility(this, this)
-/*
+
         mMoreViewModel?.firstName?.value = sessionManager?.loginResult?.first_name
         mMoreViewModel?.lastName?.value = sessionManager?.loginResult?.last_name
         mMoreViewModel?.email?.value = sessionManager?.loginResult?.email
-        mMoreViewModel?.mobile?.value = sessionManager?.loginResult?.mobile*/
+        mMoreViewModel?.mobile?.value = sessionManager?.loginResult?.mobile_number
 
         mView?.mViewModel = mMoreViewModel
 
@@ -56,7 +54,7 @@ class EditProfileActivity : BaseBindingActivity(), ImagePickerUtility.ImagePicke
     }
 
     override fun setListeners() {
-        toolbarBackBt.setOnClickListener {
+        back.setOnClickListener {
             finish()
         }
         imgAddPhoto.setOnClickListener {

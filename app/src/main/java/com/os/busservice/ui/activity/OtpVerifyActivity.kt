@@ -60,7 +60,7 @@ class OtpVerifyActivity : BaseBindingActivity(), View.OnClickListener {
             autoOtpFill(oTP)
         }
 
-        mViewModel?.mobileNo?.value = userItems?.mobile
+        mViewModel?.mobileNo?.value = userItems?.mobile_number
         mViewModel?.countryCode?.value = userItems?.country_code
 
         mViewModel?.error?.observe(this, Observer {
