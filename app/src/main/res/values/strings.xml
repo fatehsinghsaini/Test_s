@@ -213,6 +213,8 @@
     <string name="cheapest_first">Cheapest First</string>
     <string name="early_departure">Early Departure</string>
     <string name="late_departure">Late Departure</string>
+    <string name="tx_cancel">Yor transaction cancel,try again.</string>
+
 
 
 </resources>

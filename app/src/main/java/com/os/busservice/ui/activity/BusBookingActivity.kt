@@ -8,12 +8,14 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import com.os.busservice.R
 import com.os.busservice.data.ApiResponse
 import com.os.busservice.databinding.BusBookingActivityBinding
 import com.os.busservice.databinding.BusSearchListingBinding
 import com.os.busservice.listeners.BusSearchListener
 import com.os.busservice.listeners.CommonListener
+import com.os.busservice.model.PaytmResponse
 import com.os.busservice.model.RequestModel
 import com.os.busservice.model.address.AddressResult
 import com.os.busservice.model.busListResponse.BusRouteData
@@ -32,6 +34,7 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.bus_booking_activity.*
 import kotlinx.android.synthetic.main.main_toolbar_layout.*
 import java.security.SecureRandom
+import java.util.*
 
 class BusBookingActivity :BaseBindingActivity(), BusSearchListener {
 
@@ -167,6 +170,25 @@ class BusBookingActivity :BaseBindingActivity(), BusSearchListener {
              }
          }
      }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
+        if (requestCode == 101 && data != null) {
+            val response= data.getStringExtra("response")
+
+            Log.d("onPaymentSuccess=",response!!)
+
+            if(response.isNotEmpty()){
+
+                val gson = Gson()
+                val jsonObject= gson.fromJson<PaytmResponse>(response, PaytmResponse::class.java)
+
+
+
+            }else
+                Toast.makeText(this,getString(R.string.tx_cancel), Toast.LENGTH_SHORT).show()
+
+        }
+    }
 
 }
