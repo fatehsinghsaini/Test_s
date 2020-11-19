@@ -49,4 +49,7 @@ class UserDataSource(private var apiCallInterface: RestApi) {
     fun mCouponList(loginRequest: RequestModel): Observable<CouponListResponse> {
         return apiCallInterface.mCouponList(loginRequest)
     }
+    fun mGeneratePaytmChecksum(loginRequest: RequestModel): Observable<CouponListResponse> {
+        return apiCallInterface.mGeneratePaytmChecksum(loginRequest)
+    }
 }

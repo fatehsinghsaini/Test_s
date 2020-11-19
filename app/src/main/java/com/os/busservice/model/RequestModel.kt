@@ -28,5 +28,13 @@ package com.os.busservice.model
     val start_lng: String?=null
     val start_point: String?=null
     val start_time: String?=null
+    var order_id: String? = null
+    var amount: String? = null
+    var cust_id: String? = null
+    var CHECKSUMHASH: String? = null
+    var cust_mobile: String? = null
+    var CHANNEL_ID: String? = null
+    var INDUSTRY_TYPE_ID: String? = null
+    var cust_email: String? = null
 
 }

@@ -94,6 +94,8 @@ dependencies {
     //show dots
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    //paytm sdk
+    implementation 'com.paytm.appinvokesdk:appinvokesdk:1.2'
 
 
 }

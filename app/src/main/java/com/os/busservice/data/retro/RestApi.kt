@@ -37,8 +37,12 @@ interface RestApi {
 
     @POST("bus_route_listing")
     fun mBusSeatList(@Body loginRequest: SeatListRequest): Observable<SeatListResponse>
+
     @POST("coupon_code_list")
     fun mCouponList(@Body loginRequest: RequestModel): Observable<CouponListResponse>
+
+    @POST("coupon_code_list")
+    fun mGeneratePaytmChecksum(@Body loginRequest: RequestModel): Observable<CouponListResponse>
 
    /* @Multipart
     @POST("update-profile")
