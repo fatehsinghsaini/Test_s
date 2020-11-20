@@ -1,6 +1,7 @@
 package com.os.busservice.ui.activity
 
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.GridLayoutManager
 import com.os.busservice.R
 import com.os.busservice.databinding.SortFilterActivityBinding
 import com.os.busservice.ui.adapter.BusArrivalItemAdapter
@@ -21,7 +22,11 @@ class SortAndFilterActivity : BaseBindingActivity() {
     override fun initializeObject() {
         mActivity =this
 
+        val gridLayout = GridLayoutManager(this,1,GridLayoutManager.HORIZONTAL,false)
+        mBinding?.arrivalRecyclerView?.layoutManager = gridLayout
+
         mBinding?.mArrivalAdapter = mAdapter
+
 
 
     }

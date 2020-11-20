@@ -220,6 +220,7 @@
             android:textSize="@dimen/_12sdp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/arrivalRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
