@@ -2,6 +2,12 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="mArrivalAdapter"
+            type="com.os.busservice.ui.adapter.BusArrivalItemAdapter" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -216,6 +222,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:scrollbars="horizontal"
             tools:listitem="@layout/bus_arrival_item"
+            android:adapter="@{mArrivalAdapter}"
             />
 
 
