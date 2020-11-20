@@ -86,6 +86,7 @@
         <activity android:name=".ui.activity.AddressListActivity" />
         <activity android:name=".ui.activity.OfferListingActivity" />
         <activity android:name=".ui.activity.SortAndFilterActivity" />
+        <activity android:name=".ui.activity.WalletActivity" />
     </application>
 
 </manifest>

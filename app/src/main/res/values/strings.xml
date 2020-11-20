@@ -214,7 +214,7 @@
     <string name="early_departure">Early Departure</string>
     <string name="late_departure">Late Departure</string>
     <string name="tx_cancel">Yor transaction cancel,try again.</string>
-
+    <string name="clear">Clear</string>
 
 
 </resources>

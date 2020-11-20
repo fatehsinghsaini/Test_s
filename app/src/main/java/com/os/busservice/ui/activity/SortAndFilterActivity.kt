@@ -4,6 +4,7 @@ import androidx.databinding.DataBindingUtil
 import com.os.busservice.R
 import com.os.busservice.databinding.SortFilterActivityBinding
 import com.os.busservice.ui.baseFile.BaseBindingActivity
+import kotlinx.android.synthetic.main.main_toolbar_layout.*
 
 class SortAndFilterActivity : BaseBindingActivity() {
     var mBinding:SortFilterActivityBinding?=null
@@ -16,8 +17,13 @@ class SortAndFilterActivity : BaseBindingActivity() {
 
     override fun initializeObject() {
         mActivity =this
+
+
     }
 
     override fun setListeners() {
+
+        back.setOnClickListener { finish() }
+
     }
 }

@@ -1,196 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-
-    <TextView
-        style="@style/TextStyleLarge"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sort_by"
-        android:padding="@dimen/_10sdp"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/_10sdp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomButton"
         >
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/best_rated_first"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cheapest_first"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/early_departure"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/late_departure"
-            />
 
-    </RadioGroup>
-
-    <TextView
-        style="@style/TextStyleLarge"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/filter_by"
-        android:padding="@dimen/_10sdp"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        style="@style/TextStyleBold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bus_operator"
-        android:drawableEnd="@drawable/ic_arrow_right_24"
-        android:drawableRight="@drawable/ic_arrow_right_24"
-        android:padding="@dimen/_10sdp"
-        android:textSize="@dimen/_12sdp"
-        />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/textGray"
-        />
-
-    <TextView
-        style="@style/TextStyleBold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bus_features"
-        android:padding="@dimen/_10sdp"
-        android:textSize="@dimen/_12sdp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
+        android:orientation="vertical"
         >
+
+
+        <include layout="@layout/main_toolbar_layout"/>
+        <TextView
+            style="@style/TextStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by"
+            android:padding="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_rated_first"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cheapest_first"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/early_departure"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/late_departure"
+                />
+
+        </RadioGroup>
+
+        <TextView
+            style="@style/TextStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_by"
+            android:padding="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            />
 
         <TextView
             style="@style/TextStyleBold"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/live_tracking"
-            android:drawableStart="@drawable/ic_bus"
-            android:drawableLeft="@drawable/ic_bus"
-            android:drawablePadding="@dimen/_7sdp"
+            android:text="@string/bus_operator"
+            android:drawableEnd="@drawable/ic_arrow_right_24"
+            android:drawableRight="@drawable/ic_arrow_right_24"
             android:padding="@dimen/_10sdp"
-            android:textSize="@dimen/_12sdp"/>
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:layout_centerVertical="true"
+            android:textSize="@dimen/_12sdp"
             />
-
-    </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/textGray"
-        />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textGray"
+            />
 
         <TextView
             style="@style/TextStyleBold"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/high_rated_buses"
-            android:drawableStart="@drawable/ic_bus"
-            android:drawableLeft="@drawable/ic_bus"
-            android:drawablePadding="@dimen/_7sdp"
+            android:text="@string/bus_features"
             android:padding="@dimen/_10sdp"
             android:textSize="@dimen/_12sdp"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            >
+
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/live_tracking"
+                android:drawableStart="@drawable/ic_bus"
+                android:drawableLeft="@drawable/ic_bus"
+                android:drawablePadding="@dimen/_7sdp"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textGray"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            >
+
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high_rated_buses"
+                android:drawableStart="@drawable/ic_bus"
+                android:drawableLeft="@drawable/ic_bus"
+                android:drawablePadding="@dimen/_7sdp"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textGray"
             />
 
-    </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/textGray"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        >
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reschedulable"
+                android:drawableStart="@drawable/ic_baseline_timer_24"
+                android:drawableLeft="@drawable/ic_baseline_timer_24"
+                android:drawableTint="@color/textGray"
+                android:drawablePadding="@dimen/_7sdp"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textGray"
+            />
+
 
         <TextView
             style="@style/TextStyleBold"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/reschedulable"
-            android:drawableStart="@drawable/ic_baseline_timer_24"
-            android:drawableLeft="@drawable/ic_baseline_timer_24"
-            android:drawableTint="@color/textGray"
-            android:drawablePadding="@dimen/_7sdp"
+            android:text="@string/Bus_arrival_time_destination"
             android:padding="@dimen/_10sdp"
             android:textSize="@dimen/_12sdp"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:layout_centerVertical="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/bus_arrival_item"
             />
 
-    </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/textGray"
-        />
 
+    </LinearLayout>
+    </ScrollView>
 
-    <TextView
-        style="@style/TextStyleBold"
+    <LinearLayout
+        android:id="@+id/bottomButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Bus_arrival_time_destination"
-        android:padding="@dimen/_10sdp"
-        android:textSize="@dimen/_12sdp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+        <TextView
+            style="@style/TextStyleLarge"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:text="@string/clear"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            style="@style/TextStyleLarge"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:text="@string/apply"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -44,6 +44,7 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
 
     override fun setListeners() {
         manageAddress.setOnClickListener(this)
+        myWallet.setOnClickListener(this)
         changePwd.setOnClickListener(this)
         shareCouponCode.setOnClickListener(this)
         offerListing.setOnClickListener(this)
@@ -63,6 +64,7 @@ class MyAccountFragment : BaseFragment<DashBoardActivity>(), View.OnClickListene
         }
 
         when(p0?.id){
+            R.id.myWallet -> startActivity(Intent(mActivity, WalletActivity::class.java))
             R.id.manageAddress -> startActivity(Intent(mActivity, AddressListActivity::class.java))
             R.id.notificationList -> startActivity(Intent(mActivity, AddressListActivity::class.java))
             R.id.changePwd ->   startActivity(Intent(mActivity, ChangePwdActivity::class.java))

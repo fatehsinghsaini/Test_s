@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="mTrans"
+            type="com.os.busservice.model.Transaction" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:elevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_3sdp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/paidByTv"
+                style="@style/TextStyleNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{mTrans.product_name}"
+                app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/mTimeTv"
+                style="@style/TextStyleNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{mTrans.mCreatedDate()}"
+                app:layout_constraintTop_toBottomOf="@+id/paidByTv"
+                app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                />
+
+            <TextView
+                android:id="@+id/txtAmount"
+                style="@style/TextStyleBoldExtraLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text='@{mTrans.mRewards()}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="@dimen/_5sdp"
+                android:textColor='@{mTrans.mAmountColor()}'
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
